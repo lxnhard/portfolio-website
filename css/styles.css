@@ -1,0 +1,301 @@
+/*
+Colors used
+Cloud: #F3F3F3;
+Bright Red (better contrast):  #DA183C;
+Deep Red: #932432;
+Pure Purple: #3C1874;
+Purple Tinged Grey: #283747;
+ */
+
+ :root {
+   /*colors*/
+  --primary-color: #3C1874;
+  --secondary-color: #DA183C;
+  --secondary-color-darker: #932432;
+  --cloud-color: #F3F3F3;
+  --text-color: #000;
+  /*text emphasis*/
+  --bold: 700;
+  --semibold: 500;
+}
+
+ * {
+   box-sizing: border-box;
+ }
+
+body {
+  background-color: var(--cloud-color);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+h1 {
+  color: var(--primary-color);
+  font-size: 28px;
+  font-weight: var(--bold);
+}
+
+h2 {
+  color: var(--primary-color);
+  font-size: 24px;
+  font-weight: var(--bold);
+}
+
+h3 {
+  color: var(--primary-color);
+  font-size: 18px;
+  font-weight: var(--bold);
+}
+
+a {
+  color: var(--secondary-color);
+  font-weight: var(--semibold);
+  text-decoration: none;
+}
+a:visited {
+  color: var(--secondary-color-darker);
+}
+a:hover , a:focus {
+  text-decoration: underline;
+}
+a:active {
+  color: var(--primary-color);
+}
+
+ul {
+  padding-left: 0;
+  list-style-position: inside;
+}
+
+button,
+.button {
+  /* overwrites browser defaults and resets the border */
+  border: none;
+  /* takes the font from the outer container */
+  font-family: inherit;
+  font-weight: var(--semibold);
+  /* styles the background color, font color, and text decoration (underline, etc.) of the button */
+  background-color: var(--secondary-color);
+  color: var(--cloud-color);
+  text-decoration: none;
+  /*adds spacing to the button (this will be discussed more in-depth later) */
+  padding: 10px;
+  border-radius: 3px;
+  /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  transition: opacity 0.9s;
+}
+
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+  /* lets the mouse appear as a hand when hovering over the button */
+  cursor: pointer;
+  /* reduces the opacity of the button to 80% */
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+.button__secondary {
+  background-color: var(--primary-color);
+  color: var(--cloud-color);
+}
+
+.profile{
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.profile__portrait {
+  float: left;
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  margin-right: 40px;
+  border-radius: 50%;
+}
+
+/*Header and Navigation*/
+.page-header {
+  display: flex;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  align-items: flex-end;
+}
+
+.page-header__item{
+  flex: 0 1 200px;
+}
+/*navigation container within header (last = second child)*/
+.page-header__item:last-child {
+  flex-grow: 1;
+  text-align: right;
+}
+.page-header__logo {
+  transition: opacity 0.9s;
+}
+.page-header__logo:hover,
+.page-header__logo:focus {
+  opacity: 0.6;
+  transition: opacity 0.9s;
+}
+
+.navigation-list {
+  list-style-type: none;
+}
+.navigation-list li {
+  display: inline-block;
+  margin-left: 15px;
+}
+.navigation-list__item--active {
+  text-decoration: underline;
+}
+
+/*Footer */
+.page-footer {
+  clear: both;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+/*Project grid list for Work page*/
+
+/* start grid fallback */
+.project-list__item {
+ display: inline-block;
+ width: 33%;
+}
+/* end grid fallback */
+
+@supports (display: grid) {
+  .project-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px;
+    margin: 15px;
+  }
+}
+.project-list__item {
+  background-color: rgba(0, 0, 0, 0.05);
+  width: auto;
+  min-height: auto;
+  margin: 0;
+  padding: 10px;
+}
+.project-list__item--image {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.05);
+  width: auto;
+  min-height: auto;
+  margin: 0;
+  padding: 10px;
+}
+
+.project-list__item:last-child {
+  grid-column: 3 / 3;
+  grid-row: 1 / 3;
+}
+
+/* Is this the right naming?*/
+.project-list__image {
+  width: 100%;
+  height: auto;
+  max-width: 200px;
+  padding: 10px;
+}
+
+body {
+  max-width: 1440px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+main {
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+@media all and (max-width: 500px) {
+  .project-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media all and (min-width: 500px) and (max-width: 768px){
+  .project-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media all and (max-width: 768px){
+  .project-list {
+    grid-gap: 10px;
+  }
+  .project-list__item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+}
+
+
+
+/*Animations Berlin*/
+
+@keyframes color-change {
+  0% {
+    fill: #edc655;
+  }
+  50% {
+    fill: #fcffad;
+  }
+  100% {
+    fill: #f76414;
+  }
+}
+
+.sun {
+  animation: 4s color-change infinite alternate linear;
+}
+
+@keyframes cloud-move {
+  from {
+    transform: translate(0, 50px);
+  }
+  to {
+    transform: translate(200px, 50px);
+  }
+}
+
+.cloud-front {
+  animation: 28s cloud-move infinite alternate linear;
+}
+
+@keyframes cloud-move-reverse {
+from {
+  transform: translate(446px, 48px);
+}
+to {
+  transform: translate(100px, 48px);
+}
+}
+
+.cloud-back {
+  animation: 26s cloud-move-reverse infinite alternate linear;
+}

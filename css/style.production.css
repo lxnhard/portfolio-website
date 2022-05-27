@@ -1,0 +1,391 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
+/*
+Colors used
+Cloud: #F3F3F3;
+Bright Red (better contrast):  #DA183C;
+Deep Red: #932432;
+Pure Purple: #3C1874;
+Purple Tinged Grey: #283747;
+ */
+
+
+ * {
+   -webkit-box-sizing: border-box;
+           box-sizing: border-box;
+ }
+
+body {
+  background-color: #F3F3F3;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #000;
+}
+
+h1 {
+  color: #3C1874;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+h2 {
+  color: #3C1874;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+h3 {
+  color: #3C1874;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+a {
+  color: #DA183C;
+  font-weight: 500;
+  text-decoration: none;
+}
+a:visited {
+  color: #932432;
+}
+a:hover , a:focus {
+  text-decoration: underline;
+}
+a:active {
+  color: #3C1874;
+}
+
+ul {
+  padding-left: 0;
+  list-style-position: inside;
+}
+
+button {
+  /* overwrites browser defaults and resets the border */
+  border: none;
+  /* takes the font from the outer container */
+  font-family: inherit;
+  font-weight: 500;
+  /* styles the background color, font color, and text decoration (underline, etc.) of the button */
+  background-color: #DA183C;
+  color: #F3F3F3;
+  text-decoration: none;
+  /*adds spacing to the button (this will be discussed more in-depth later) */
+  padding: 10px;
+  border-radius: 3px;
+  /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  -webkit-transition: opacity 0.9s;
+  -o-transition: opacity 0.9s;
+  transition: opacity 0.9s;
+}
+
+.button {
+  /* overwrites browser defaults and resets the border */
+  border: none;
+  /* takes the font from the outer container */
+  font-family: inherit;
+  font-weight: 500;
+  /* styles the background color, font color, and text decoration (underline, etc.) of the button */
+  background-color: #DA183C;
+  color: #F3F3F3;
+  text-decoration: none;
+  /*adds spacing to the button (this will be discussed more in-depth later) */
+  padding: 10px;
+  border-radius: 3px;
+  /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  -webkit-transition: opacity 0.9s;
+  -o-transition: opacity 0.9s;
+  transition: opacity 0.9s;
+}
+
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+  /* lets the mouse appear as a hand when hovering over the button */
+  cursor: pointer;
+  /* reduces the opacity of the button to 80% */
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+.button__secondary {
+  background-color: #3C1874;
+  color: #F3F3F3;
+}
+
+.profile{
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.profile__portrait {
+  float: left;
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  margin-right: 40px;
+  border-radius: 50%;
+}
+
+/*Header and Navigation*/
+.page-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.page-header__item{
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 200px;
+          flex: 0 1 200px;
+}
+/*navigation container within header (last = second child)*/
+.page-header__item:last-child {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: right;
+}
+.page-header__logo {
+  -webkit-transition: opacity 0.9s;
+  -o-transition: opacity 0.9s;
+  transition: opacity 0.9s;
+}
+.page-header__logo:hover,
+.page-header__logo:focus {
+  opacity: 0.6;
+  -webkit-transition: opacity 0.9s;
+  -o-transition: opacity 0.9s;
+  transition: opacity 0.9s;
+}
+
+.navigation-list {
+  list-style-type: none;
+}
+.navigation-list li {
+  display: inline-block;
+  margin-left: 15px;
+}
+.navigation-list__item--active {
+  text-decoration: underline;
+}
+
+/*Footer */
+.page-footer {
+  clear: both;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+/*Project grid list for Work page*/
+
+/* start grid fallback */
+.project-list__item {
+ display: inline-block;
+ width: 33%;
+}
+/* end grid fallback */
+
+@supports (display: grid) {
+  .project-list {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 15px 1fr 15px 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px;
+    margin: 15px;
+  }
+}
+.project-list__item {
+  background-color: rgba(0, 0, 0, 0.05);
+  width: auto;
+  min-height: auto;
+  margin: 0;
+  padding: 10px;
+}
+.project-list__item--image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.05);
+  width: auto;
+  min-height: auto;
+  margin: 0;
+  padding: 10px;
+}
+
+.project-list__item:last-child {
+  -ms-grid-column: 3;
+  grid-column: 3 / 3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1 / 3;
+}
+
+/* Is this the right naming?*/
+.project-list__image {
+  width: 100%;
+  height: auto;
+  max-width: 200px;
+  padding: 10px;
+}
+
+body {
+  max-width: 1440px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+main {
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+@media all and (max-width: 500px) {
+  .project-list {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media all and (min-width: 500px) and (max-width: 768px){
+  .project-list {
+    -ms-grid-columns: 1fr 15px 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media all and (max-width: 768px){
+  .project-list {
+    grid-gap: 10px;
+  }
+  .project-list__item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+}
+
+
+
+/*Animations Berlin*/
+
+@-webkit-keyframes color-change {
+  0% {
+    fill: #edc655;
+  }
+  50% {
+    fill: #fcffad;
+  }
+  100% {
+    fill: #f76414;
+  }
+}
+
+@keyframes color-change {
+  0% {
+    fill: #edc655;
+  }
+  50% {
+    fill: #fcffad;
+  }
+  100% {
+    fill: #f76414;
+  }
+}
+
+.sun {
+  -webkit-animation: 4s color-change infinite alternate linear;
+          animation: 4s color-change infinite alternate linear;
+}
+
+@-webkit-keyframes cloud-move {
+  from {
+    -webkit-transform: translate(0, 50px);
+            transform: translate(0, 50px);
+  }
+  to {
+    -webkit-transform: translate(200px, 50px);
+            transform: translate(200px, 50px);
+  }
+}
+
+@keyframes cloud-move {
+  from {
+    -webkit-transform: translate(0, 50px);
+            transform: translate(0, 50px);
+  }
+  to {
+    -webkit-transform: translate(200px, 50px);
+            transform: translate(200px, 50px);
+  }
+}
+
+.cloud-front {
+  -webkit-animation: 28s cloud-move infinite alternate linear;
+          animation: 28s cloud-move infinite alternate linear;
+}
+
+@-webkit-keyframes cloud-move-reverse {
+from {
+  -webkit-transform: translate(446px, 48px);
+          transform: translate(446px, 48px);
+}
+to {
+  -webkit-transform: translate(100px, 48px);
+          transform: translate(100px, 48px);
+}
+}
+
+@keyframes cloud-move-reverse {
+from {
+  -webkit-transform: translate(446px, 48px);
+          transform: translate(446px, 48px);
+}
+to {
+  -webkit-transform: translate(100px, 48px);
+          transform: translate(100px, 48px);
+}
+}
+
+.cloud-back {
+  -webkit-animation: 26s cloud-move-reverse infinite alternate linear;
+          animation: 26s cloud-move-reverse infinite alternate linear;
+}
