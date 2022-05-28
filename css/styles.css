@@ -51,43 +51,23 @@ h3 {
 }
 
 a {
-  color: var(--primary-color);
+  color: var(--secondary-color);
   font-weight: var(--semibold);
   text-decoration: none;
 }
 a:visited {
-  color: var(--primary-color);
-  font-weight: 400;
+  color: var(--secondary-color-darker);
 }
 a:hover , a:focus {
   text-decoration: underline;
 }
 a:active {
-  color: #000;
+  color: var(--primary-color);
 }
 
 ul {
   padding-left: 0;
   list-style-position: inside;
-}
-
-body {
-  max-width: 1440px;
-  padding: 20px;
-  margin: 0 auto;
-}
-
-main {
-  width: 100%;
-  max-width: 768px;
-  margin: 0 auto;
-}
-
-.contact {
-  margin-left: auto;
-  margin-right: auto;
-  width: 10em;
-
 }
 
 button,
@@ -139,7 +119,7 @@ button:focus,
   border-radius: 50%;
 }
 
-/*Header and Navigation layout*/
+/*Header and Navigation*/
 .page-header {
   display: flex;
   width: 100%;
@@ -148,6 +128,7 @@ button:focus,
   border-bottom: 2px solid rgba(0, 0, 0, 0.3);
   align-items: flex-end;
 }
+
 .page-header__item{
   flex: 0 1 200px;
 }
@@ -156,30 +137,26 @@ button:focus,
   flex-grow: 1;
   text-align: right;
 }
-
-/*Navigation*/
+.page-header__logo {
+  transition: opacity 0.9s;
+}
+.page-header__logo:hover,
+.page-header__logo:focus {
+  opacity: 0.6;
+  transition: opacity 0.9s;
+}
 
 .navigation-list {
   list-style-type: none;
 }
 .navigation-list li {
   display: inline-block;
-  padding: 0 10px;
+  margin-left: 15px;
 }
 .navigation-list__item--active {
-  font-weight: var(--bold);
+  text-decoration: underline;
 }
 
-/*header logo transition */
-.page-header__logo {
-  transition: opacity 0.9s;
-}
-.page-header__logo:hover,
-.page-header__logo:focus,
-.page-header__logo:active {
-  opacity: 0.6;
-  transition: opacity 0.9s;
-}
 /*Footer */
 .page-footer {
   clear: both;
@@ -187,7 +164,6 @@ button:focus,
   flex-direction: column;
   text-align: center;
 }
-
 
 /*Project grid list for Work page*/
 
@@ -237,6 +213,18 @@ button:focus,
   padding: 10px;
 }
 
+body {
+  max-width: 1440px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+main {
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+  text-align: justify;
+}
 
 @media all and (max-width: 500px) {
   .project-list {
