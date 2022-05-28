@@ -47,18 +47,19 @@ h3 {
 }
 
 a {
-  color: #DA183C;
+  color: #3C1874;
   font-weight: 500;
   text-decoration: none;
 }
 a:visited {
-  color: #932432;
+  color: #3C1874;
+  font-weight: 400;
 }
 a:hover , a:focus {
   text-decoration: underline;
 }
 a:active {
-  color: #3C1874;
+  color: #000;
 }
 
 ul {

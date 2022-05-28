@@ -51,18 +51,19 @@ h3 {
 }
 
 a {
-  color: var(--secondary-color);
+  color: var(--primary-color);
   font-weight: var(--semibold);
   text-decoration: none;
 }
 a:visited {
-  color: var(--secondary-color-darker);
+  color: var(--primary-color);
+  font-weight: 400;
 }
 a:hover , a:focus {
   text-decoration: underline;
 }
 a:active {
-  color: var(--primary-color);
+  color: #000;
 }
 
 ul {
