@@ -70,6 +70,25 @@ ul {
   list-style-position: inside;
 }
 
+body {
+  max-width: 1440px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+main {
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+.contact {
+  margin-left: auto;
+  margin-right: auto;
+  width: 10em;
+
+}
+
 button,
 .button {
   /* overwrites browser defaults and resets the border */
@@ -213,18 +232,6 @@ button:focus,
   padding: 10px;
 }
 
-body {
-  max-width: 1440px;
-  padding: 20px;
-  margin: 0 auto;
-}
-
-main {
-  width: 100%;
-  max-width: 768px;
-  margin: 0 auto;
-  text-align: justify;
-}
 
 @media all and (max-width: 500px) {
   .project-list {
