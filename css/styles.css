@@ -138,7 +138,7 @@ button:focus,
   border-radius: 50%;
 }
 
-/*Header and Navigation*/
+/*Header and Navigation layout*/
 .page-header {
   display: flex;
   width: 100%;
@@ -147,7 +147,6 @@ button:focus,
   border-bottom: 2px solid rgba(0, 0, 0, 0.3);
   align-items: flex-end;
 }
-
 .page-header__item{
   flex: 0 1 200px;
 }
@@ -156,26 +155,30 @@ button:focus,
   flex-grow: 1;
   text-align: right;
 }
-.page-header__logo {
-  transition: opacity 0.9s;
-}
-.page-header__logo:hover,
-.page-header__logo:focus {
-  opacity: 0.6;
-  transition: opacity 0.9s;
-}
+
+/*Navigation*/
 
 .navigation-list {
   list-style-type: none;
 }
 .navigation-list li {
   display: inline-block;
-  margin-left: 15px;
+  padding: 0 10px;
 }
 .navigation-list__item--active {
-  text-decoration: underline;
+  font-weight: var(--bold);
 }
 
+/*header logo transition */
+.page-header__logo {
+  transition: opacity 0.9s;
+}
+.page-header__logo:hover,
+.page-header__logo:focus,
+.page-header__logo:active {
+  opacity: 0.6;
+  transition: opacity 0.9s;
+}
 /*Footer */
 .page-footer {
   clear: both;
@@ -183,6 +186,7 @@ button:focus,
   flex-direction: column;
   text-align: center;
 }
+
 
 /*Project grid list for Work page*/
 
