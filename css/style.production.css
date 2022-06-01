@@ -14,6 +14,7 @@ Pure Purple: #3C1874;
 Purple Tinged Grey: #283747;
  */
 
+
  * {
    -webkit-box-sizing: border-box;
            box-sizing: border-box;
@@ -52,7 +53,6 @@ a {
   text-decoration: none;
 }
 a:visited {
-  color: #3C1874;
   font-weight: 400;
 }
 a:hover , a:focus {
@@ -80,23 +80,37 @@ main {
 }
 
 .contact {
-  margin-left: auto;
-  margin-right: auto;
-  width: 10em;
-
+  text-align: center;
+}
+.contact-form {
+  margin: 25px auto;
+  width: 50%;
+  text-align: justify;
 }
 
+.contact-form textarea,
+.contact-form input {
+  width: 100%;
+  padding: 10px;
+}
+
+.contact-form button {
+  width: 100%;
+}
+
+.contact-form label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
 button {
-  /* overwrites browser defaults and resets the border */
   border: none;
-  /* takes the font from the outer container */
   font-family: inherit;
   font-weight: 500;
-  /* styles the background color, font color, and text decoration (underline, etc.) of the button */
   background-color: #DA183C;
   color: #F3F3F3;
   text-decoration: none;
-  /*adds spacing to the button (this will be discussed more in-depth later) */
   padding: 10px;
   border-radius: 3px;
   /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
@@ -106,17 +120,14 @@ button {
   transition: opacity 0.9s;
 }
 
+
 .button {
-  /* overwrites browser defaults and resets the border */
   border: none;
-  /* takes the font from the outer container */
   font-family: inherit;
   font-weight: 500;
-  /* styles the background color, font color, and text decoration (underline, etc.) of the button */
   background-color: #DA183C;
   color: #F3F3F3;
   text-decoration: none;
-  /*adds spacing to the button (this will be discussed more in-depth later) */
   padding: 10px;
   border-radius: 3px;
   /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
@@ -137,14 +148,9 @@ button:focus,
   text-decoration: none;
 }
 
-.button__secondary {
-  background-color: #3C1874;
-  color: #F3F3F3;
-}
-
 .profile{
   max-width: 700px;
-  margin: 0 auto;
+  margin: 100px auto;
 }
 
 .profile__portrait {
@@ -222,13 +228,49 @@ button:focus,
   text-align: center;
 }
 
+.social-media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.social-media__icon {
+  width: 30px;
+  margin: 5px;
+  -webkit-transition: width .2s linear, margin .2s linear;
+  -o-transition: width .2s linear, margin .2s linear;
+  transition: width .2s linear, margin .2s linear;
+}
+
+.social-media__icon:hover {
+  width: 40px;
+  margin: 0px;
+}
+
 
 /*Project grid list for Work page*/
-
+.work {
+  text-align: center;
+}
 /* start grid fallback */
 .project-list__item {
- display: inline-block;
+ /*display: inline-block;*/
+ display: -webkit-box;
+ display: -ms-flexbox;
+ display: flex;
+ -webkit-box-orient: vertical;
+ -webkit-box-direction: normal;
+     -ms-flex-direction: column;
+         flex-direction: column;
+ -webkit-box-pack: start;
+     -ms-flex-pack: start;
+         justify-content: flex-start;
  width: 33%;
+ text-align: justify;
 }
 /* end grid fallback */
 
@@ -242,29 +284,15 @@ button:focus,
     margin: 15px;
   }
 }
+
 .project-list__item {
   background-color: rgba(0, 0, 0, 0.05);
   width: auto;
   min-height: auto;
-  margin: 0;
-  padding: 10px;
-}
-.project-list__item--image {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  background-color: rgba(0, 0, 0, 0.05);
-  width: auto;
-  min-height: auto;
-  margin: 0;
-  padding: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 4px 3px 3px 2px rgba(0, 0, 0, 0.2);
+          box-shadow: 4px 3px 3px 2px rgba(0, 0, 0, 0.2);
+
 }
 
 .project-list__item:last-child {
@@ -273,14 +301,6 @@ button:focus,
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
   grid-row: 1 / 3;
-}
-
-/* Is this the right naming?*/
-.project-list__image {
-  width: 100%;
-  height: auto;
-  max-width: 200px;
-  padding: 10px;
 }
 
 
@@ -312,91 +332,34 @@ button:focus,
   h2 {
     font-size: 20px;
   }
-}
-
-
-
-/*Animations Berlin*/
-
-@-webkit-keyframes color-change {
-  0% {
-    fill: #edc655;
-  }
-  50% {
-    fill: #fcffad;
-  }
-  100% {
-    fill: #f76414;
+  h3 {
+    font-size: 16px;
   }
 }
 
-@keyframes color-change {
-  0% {
-    fill: #edc655;
-  }
-  50% {
-    fill: #fcffad;
-  }
-  100% {
-    fill: #f76414;
-  }
+.project-list__content {
+  margin: 0;
+  padding: 0 10px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+.project-list__content h3 p {
+  margin: 0;
+  padding: 10px 0;
 }
 
-.sun {
-  -webkit-animation: 4s color-change infinite alternate linear;
-          animation: 4s color-change infinite alternate linear;
+.project-list__image {
+  margin: 0;
+  width: 100%;
 }
-
-@-webkit-keyframes cloud-move {
-  from {
-    -webkit-transform: translate(0, 50px);
-            transform: translate(0, 50px);
-  }
-  to {
-    -webkit-transform: translate(200px, 50px);
-            transform: translate(200px, 50px);
-  }
+.project-list__links {
+  margin: 10px;
+  padding: 10px 0;
+    width: 100%;
 }
-
-@keyframes cloud-move {
-  from {
-    -webkit-transform: translate(0, 50px);
-            transform: translate(0, 50px);
-  }
-  to {
-    -webkit-transform: translate(200px, 50px);
-            transform: translate(200px, 50px);
-  }
-}
-
-.cloud-front {
-  -webkit-animation: 28s cloud-move infinite alternate linear;
-          animation: 28s cloud-move infinite alternate linear;
-}
-
-@-webkit-keyframes cloud-move-reverse {
-from {
-  -webkit-transform: translate(446px, 48px);
-          transform: translate(446px, 48px);
-}
-to {
-  -webkit-transform: translate(100px, 48px);
-          transform: translate(100px, 48px);
-}
-}
-
-@keyframes cloud-move-reverse {
-from {
-  -webkit-transform: translate(446px, 48px);
-          transform: translate(446px, 48px);
-}
-to {
-  -webkit-transform: translate(100px, 48px);
-          transform: translate(100px, 48px);
-}
-}
-
-.cloud-back {
-  -webkit-animation: 26s cloud-move-reverse infinite alternate linear;
-          animation: 26s cloud-move-reverse infinite alternate linear;
+.project__button {
+  background-color: rgba(0, 0, 0, .6);;
+  color: #F3F3F3;
+  width: 100%;
 }
