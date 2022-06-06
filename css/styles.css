@@ -1,19 +1,22 @@
 /*
 Colors used
-Cloud: #F3F3F3;
-Bright Red (better contrast):  #DA183C;
-Deep Red: #932432;
-Pure Purple: #3C1874;
-Purple Tinged Grey: #283747;
+
+SHIP COVE - primary color
+DESERT STORM - Light shades
+KIMBERLY - Light accent
+RUM - Dark accent
+CHARADE - Dark shades
+
  */
 
  :root {
    /*colors*/
-  --primary-color: #3C1874;
-  --secondary-color: #DA183C;
-  --secondary-color-darker: #932432;
-  --cloud-color: #F3F3F3;
-  --text-color: #000;
+  --primary-color: #7691B2;
+  --light-accent: #867CAA;
+  --dark-accent: #746A8B;
+  --light-shades: #FAF9F8;
+  --dark-shades: #15151C;
+  --text-color: #15151C;
   /*text emphasis*/
   --bold: 700;
   --semibold: 600;
@@ -24,7 +27,7 @@ Purple Tinged Grey: #283747;
  }
 
 body {
-  background-color: var(--cloud-color);
+  background-color: var(--light-shades);
   font-family: 'Darker Grotesque', sans-serif;
   font-weight: 400;
   font-size: 20px;
@@ -33,25 +36,25 @@ body {
 }
 
 h1 {
-  color: var(--primary-color);
+  color: var(--text-color);
   font-size: 32px;
   font-weight: var(--bold);
 }
 
 h2 {
-  color: var(--primary-color);
+  color: var(--text-color);
   font-size: 26px;
   font-weight: var(--bold);
 }
 
 h3 {
-  color: var(--primary-color);
+  color: var(--text-color);
   font-size: 20px;
   font-weight: var(--bold);
 }
 
 a {
-  color: var(--primary-color);
+  color: var(--dark-accent);
   font-weight: var(--semibold);
   text-decoration: none;
 }
@@ -72,7 +75,6 @@ ul {
 
 body {
   max-width: 1440px;
-  padding: 20px;
   margin: 0 auto;
 }
 
@@ -112,8 +114,8 @@ button,
   border: none;
   font-family: inherit;
   font-weight: var(--semibold);
-  background-color: var(--secondary-color);
-  color: var(--cloud-color);
+  background-color: var(--primary-color);
+  color: var(--light-shades);
   text-decoration: none;
   padding: 10px;
   border-radius: 3px;
@@ -152,13 +154,28 @@ button:focus,
   display: flex;
   width: 100%;
   max-width: 1440px;
-  margin: 0 auto;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-  align-items: flex-end;
+  justify-content: flex-end;
+  align-items: center;
+  height: 90px;
+  line-height: 90px;
 }
-.page-header__item{
+.page-header__item {
   flex: 0 1 200px;
 }
+/*header logo*/
+
+.page-header__logo {
+  transition: opacity 0.9s;
+  padding: 10px;
+  float: left;
+}
+.page-header__logo:hover,
+.page-header__logo:focus,
+.page-header__logo:active {
+  opacity: 0.6;
+  transition: opacity 0.9s;
+}
+
 /*navigation container within header (last = second child)*/
 .page-header__item:last-child {
   flex-grow: 1;
@@ -170,24 +187,50 @@ button:focus,
 .navigation-list {
   list-style-type: none;
 }
+
 .navigation-list li {
   display: inline-block;
-  padding: 0 10px;
-}
-.navigation-list__item--active {
-  font-weight: var(--bold);
+  width: auto;
+  margin: 0;
+  margin-right: -4px;
+  max-height: 90px;
 }
 
-/*header logo transition */
-.page-header__logo {
-  transition: opacity 0.9s;
+.navigation-list__item {
+  display: inline-block;
+  padding: 0 15px 0 15px;
+  color: var(--dark-shades);
+  background-color: var(--light-shades);
+  text-transform: uppercase;
+  font-weight: 400;
 }
-.page-header__logo:hover,
-.page-header__logo:focus,
-.page-header__logo:active {
-  opacity: 0.6;
-  transition: opacity 0.9s;
+
+.navigation-list__item:hover {
+  text-decoration: none;
+  background-color: var(--primary-color);
+  color: var(--light-shades);
+  transition: background-color 0.3s ease-out, color 0.3s ease-out;
 }
+
+.navigation-list__item--active {
+  background-color: var(--primary-color);
+  color: var(--light-shades);
+}
+
+@media all and (max-width: 593px) {
+  .page-header {
+    height: inherit;
+    line-height: inherit;
+    align-items: flex-start;
+  }
+  .navigation-list__item--active {
+    background-color: inherit;
+    color: var(--dark-shades);
+    font-weight: 700;
+  }
+}
+
+
 /*Footer */
 .page-footer {
   clear: both;
@@ -242,9 +285,8 @@ button:focus,
   background-color: rgba(0, 0, 0, 0.05);
   width: auto;
   min-height: auto;
-  border: 2px solid rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.3);
   box-shadow: 4px 3px 3px 2px rgba(0, 0, 0, 0.2);
-
 }
 
 .project-list__item:last-child {
@@ -301,8 +343,6 @@ button:focus,
 .project-list__links {
   margin: 10px;
   padding: 10px 0;
-    width: 100%;
-}
   width: 100%;
 }
 
