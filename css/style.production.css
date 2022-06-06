@@ -1,4 +1,11 @@
 /*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
+/*
 Colors used
 
 SHIP COVE - primary color
@@ -9,53 +16,49 @@ CHARADE - Dark shades
 
  */
 
-* {
-  -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
+ * {
+   -webkit-box-sizing: border-box;
+           box-sizing: border-box;
+ }
 
 body {
-  background-color: #faf9f8;
+  background-color: #FAF9F8;
   font-family: 'Darker Grotesque', sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 1.6;
-  color: #15151c;
+  color: #15151C;
 }
 
 h1 {
-  color: #15151c;
+  color: #15151C;
   font-size: 32px;
   font-weight: 700;
 }
 
 h2 {
-  color: #15151c;
+  color: #15151C;
   font-size: 26px;
   font-weight: 700;
 }
 
 h3 {
-  color: #15151c;
+  color: #15151C;
   font-size: 20px;
   font-weight: 700;
 }
 
 a {
-  color: #746a8b;
+  color: #746A8B;
   font-weight: 600;
   text-decoration: none;
 }
-
 a:visited {
   font-weight: 400;
 }
-
-a:hover,
-a:focus {
+a:hover , a:focus {
   text-decoration: underline;
 }
-
 a:active {
   color: #000;
 }
@@ -79,7 +82,6 @@ main {
 .contact {
   text-align: center;
 }
-
 .contact-form {
   margin: 25px auto;
   width: 50%;
@@ -101,16 +103,16 @@ main {
   font-weight: 600;
 }
 
+
 button {
   border: none;
   font-family: inherit;
   font-weight: 600;
-  background-color: #7691b2;
-  color: #faf9f8;
+  background-color: #7691B2;
+  color: #FAF9F8;
   text-decoration: none;
   padding: 10px;
   border-radius: 3px;
-
   /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
   border-bottom: 2px solid rgba(0, 0, 0, 0.3);
   -webkit-transition: opacity 0.9s;
@@ -118,16 +120,16 @@ button {
   transition: opacity 0.9s;
 }
 
+
 .button {
   border: none;
   font-family: inherit;
   font-weight: 600;
-  background-color: #7691b2;
-  color: #faf9f8;
+  background-color: #7691B2;
+  color: #FAF9F8;
   text-decoration: none;
   padding: 10px;
   border-radius: 3px;
-
   /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
   border-bottom: 2px solid rgba(0, 0, 0, 0.3);
   -webkit-transition: opacity 0.9s;
@@ -141,13 +143,12 @@ button:focus,
 .button:focus {
   /* lets the mouse appear as a hand when hovering over the button */
   cursor: pointer;
-
   /* reduces the opacity of the button to 80% */
   opacity: 0.8;
   text-decoration: none;
 }
 
-.profile {
+.profile{
   max-width: 700px;
   margin: 100px auto;
 }
@@ -161,7 +162,7 @@ button:focus,
   border-radius: 50%;
 }
 
-/* Header and Navigation layout */
+/*Header and Navigation layout*/
 .page-header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -177,14 +178,12 @@ button:focus,
   height: 90px;
   line-height: 90px;
 }
-
 .page-header__item {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 200px;
           flex: 0 1 200px;
 }
-
-/* header logo */
+/*header logo*/
 
 .page-header__logo {
   -webkit-transition: opacity 0.9s;
@@ -193,7 +192,6 @@ button:focus,
   padding: 10px;
   float: left;
 }
-
 .page-header__logo:hover,
 .page-header__logo:focus,
 .page-header__logo:active {
@@ -203,7 +201,7 @@ button:focus,
   transition: opacity 0.9s;
 }
 
-/* navigation container within header (last = second child) */
+/*navigation container within header (last = second child)*/
 .page-header__item:last-child {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
@@ -211,7 +209,7 @@ button:focus,
   text-align: right;
 }
 
-/* Navigation */
+/*Navigation*/
 
 .navigation-list {
   list-style-type: none;
@@ -227,25 +225,25 @@ button:focus,
 
 .navigation-list__item {
   display: inline-block;
-  padding: 0 15px;
-  color: #15151c;
-  background-color: #faf9f8;
+  padding: 0 15px 0 15px;
+  color: #15151C;
+  background-color: #FAF9F8;
   text-transform: uppercase;
   font-weight: 400;
 }
 
 .navigation-list__item:hover {
   text-decoration: none;
-  background-color: #7691b2;
-  color: #faf9f8;
+  background-color: #7691B2;
+  color: #FAF9F8;
   -webkit-transition: background-color 0.3s ease-out, color 0.3s ease-out;
   -o-transition: background-color 0.3s ease-out, color 0.3s ease-out;
   transition: background-color 0.3s ease-out, color 0.3s ease-out;
 }
 
 .navigation-list__item--active {
-  background-color: #7691b2;
-  color: #faf9f8;
+  background-color: #7691B2;
+  color: #FAF9F8;
 }
 
 @media all and (max-width: 593px) {
@@ -256,15 +254,15 @@ button:focus,
         -ms-flex-align: start;
             align-items: flex-start;
   }
-
   .navigation-list__item--active {
     background-color: inherit;
-    color: #15151c;
+    color: #15151C;
     font-weight: 700;
   }
 }
 
-/* Footer */
+
+/*Footer */
 .page-footer {
   clear: both;
   display: -webkit-box;
@@ -290,23 +288,24 @@ button:focus,
 .social-media__icon {
   width: 30px;
   margin: 5px;
-  -webkit-transition: width 0.2s linear, margin 0.2s linear;
-  -o-transition: width 0.2s linear, margin 0.2s linear;
-  transition: width 0.2s linear, margin 0.2s linear;
+  -webkit-transition: width .2s linear, margin .2s linear;
+  -o-transition: width .2s linear, margin .2s linear;
+  transition: width .2s linear, margin .2s linear;
 }
 
 .social-media__icon:hover {
   width: 40px;
-  margin: 0;
+  margin: 0px;
 }
 
-/* Project grid list for Work page */
+
+/*Project grid list for Work page*/
 .work {
   text-align: center;
 }
-
 /* start grid fallback */
 .project-list__item {
+ /*display: inline-block;*/
  display: -webkit-box;
  display: -ms-flexbox;
  display: flex;
