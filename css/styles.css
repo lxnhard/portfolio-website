@@ -303,8 +303,9 @@ button:focus,
   padding: 10px 0;
     width: 100%;
 }
-.project__button {
-  background-color: rgba(0, 0, 0, .6);;
-  color: var(--cloud-color);
   width: 100%;
+}
+
+.project__button__contact {
+  background-color: var(--light-accent);
 }

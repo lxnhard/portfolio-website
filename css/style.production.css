@@ -7,13 +7,14 @@
 
 /*
 Colors used
-Cloud: #F3F3F3;
-Bright Red (better contrast):  #DA183C;
-Deep Red: #932432;
-Pure Purple: #3C1874;
-Purple Tinged Grey: #283747;
- */
 
+SHIP COVE - primary color
+DESERT STORM - Light shades
+KIMBERLY - Light accent
+RUM - Dark accent
+CHARADE - Dark shades
+
+ */
 
  * {
    -webkit-box-sizing: border-box;
@@ -21,35 +22,34 @@ Purple Tinged Grey: #283747;
  }
 
 body {
-  background-color: #F3F3F3;
-  font-family: 'Roboto', sans-serif;
+  background-color: #FAF9F8;
   font-family: 'Darker Grotesque', sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 1.6;
-  color: #000;
+  color: #15151C;
 }
 
 h1 {
-  color: #3C1874;
+  color: #15151C;
   font-size: 32px;
   font-weight: 700;
 }
 
 h2 {
-  color: #3C1874;
+  color: #15151C;
   font-size: 26px;
   font-weight: 700;
 }
 
 h3 {
-  color: #3C1874;
+  color: #15151C;
   font-size: 20px;
   font-weight: 700;
 }
 
 a {
-  color: #3C1874;
+  color: #746A8B;
   font-weight: 600;
   text-decoration: none;
 }
@@ -108,9 +108,9 @@ main {
 button {
   border: none;
   font-family: inherit;
-  background-color: #DA183C;
-  color: #F3F3F3;
   font-weight: 600;
+  background-color: #7691B2;
+  color: #FAF9F8;
   text-decoration: none;
   padding: 10px;
   border-radius: 3px;
@@ -125,9 +125,9 @@ button {
 .button {
   border: none;
   font-family: inherit;
-  background-color: #DA183C;
-  color: #F3F3F3;
   font-weight: 600;
+  background-color: #7691B2;
+  color: #FAF9F8;
   text-decoration: none;
   padding: 10px;
   border-radius: 3px;
@@ -359,8 +359,9 @@ button:focus,
   padding: 10px 0;
     width: 100%;
 }
-.project__button {
-  background-color: rgba(0, 0, 0, .6);;
-  color: #F3F3F3;
   width: 100%;
+}
+
+.project__button__contact {
+  background-color: #867CAA;
 }
