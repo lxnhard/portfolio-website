@@ -163,6 +163,18 @@ button:focus,
   border-radius: 50%;
 }
 
+@media all and (max-width: 500px) {
+  .profile__portrait {
+    display: block;
+    float: none;
+    margin: 0 auto;
+  }
+
+  .profile {
+    text-align: center;
+  }
+}
+
 /* Header and Navigation layout */
 .page-header {
   display: flex;
