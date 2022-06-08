@@ -94,6 +94,12 @@ main {
   text-align: justify;
 }
 
+@media all and (max-width: 500px) {
+  .contact-form {
+    width: 100%;
+  }
+}
+
 .contact-form textarea,
 .contact-form input {
   width: 100%;
@@ -105,7 +111,7 @@ main {
 }
 
 .contact-form label {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
 }
 
