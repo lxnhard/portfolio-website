@@ -16,12 +16,6 @@ CHARADE - Dark shades
 
 */
 
-:root {
-  /* colors */
-
-  /* text emphasis */
-}
-
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -50,7 +44,7 @@ h2 {
 
 h3 {
   color: #15151c;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
 }
 
@@ -87,6 +81,7 @@ main {
   width: 100%;
   max-width: 768px;
   margin: 0 auto;
+  padding: 0 10px;
 }
 
 .contact {
@@ -319,7 +314,6 @@ button:focus,
 
 /* start grid fallback */
 .project-list__item {
-  /* display: inline-block; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -389,15 +383,15 @@ button:focus,
   }
 
   h1 {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   h2 {
-    font-size: 20px;
+    font-size: 24px;
   }
 
   h3 {
-    font-size: 16px;
+    font-size: 20px;
   }
 }
 
@@ -427,4 +421,79 @@ button:focus,
 
 .project__button__contact {
   background-color: #867caa;
+}
+
+/* ABOUT page */
+
+/* start grid fallback */
+.about-content {
+  display: inline-block;
+  width: 33%;
+}
+
+/* end grid fallback */
+
+@supports (display: grid) {
+  .about-grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 15px 2fr;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 15px;
+    -ms-flex-line-pack: space-end;
+        align-content: space-end;
+  }
+}
+
+.about-headline {
+  text-align: center;
+}
+
+.about-image {
+  max-width: 90px;
+}
+
+.about-content {
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
+
+.about-content p {
+  margin-top: 0;
+}
+
+@media all and (max-width: 768px) {
+  .about-grid {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    justify-items: center;
+    max-width: 75%;
+    margin: 0 auto;
+  }
+
+  .about-content,
+  .about-content p {
+    text-align: center;
+  }
+
+  .about-image {
+    max-width: 60px;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .about-grid {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    justify-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+  }
 }
