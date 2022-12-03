@@ -8,8 +8,7 @@
   <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon" />
   <link rel="stylesheet" type="text/css"
     href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="css/style.production.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 
 <body>
@@ -39,18 +38,36 @@
 
     <h1>Work</h1>
     <div class="project-list">
+      <div class="project-list__item">
+        <img src="img/meetloaf.jpg" alt="Screenshot: Meetloaf app" class="project-list__image">
+        <div class="project-list__content">
+          <h3>Meetloaf</h3>
+          <p>
+            A serverless, progressive web application (PWA) that shows upcoming events in different cities built with
+            React using a test-driven development (TDD) technique. The application uses the Google Calendar API to fetch
+            upcoming events and Google authentication via AWS Lambda.</p>
+        </div>
+        <div class="project-list__links">
+          <a href="https://github.com/lxnhard/meet" class="button" target="_blank">&lt;&gt; on Github</a>
+          <a href="https://lxnhard.github.io/meet/" class="button" target="_blank">Live</a>
+        </div>
+      </div>
 
       <div class="project-list__item">
-        <img src="img/project-portfolio.png" alt="Screenshot: Portfolio Website" class="project-list__image">
+        <img src="img/movie-app.jpg" alt="Screenshot: Portfolio Website" class="project-list__image">
         <div class="project-list__content">
-          <h3>Portfolio website</h3>
+          <h3>Watch-Til-Death</h3>
           <p>
-            A responsive website built with HTML and CSS. Work in progress. Can only get better.
+            A web application providing users with access to information about different movies,
+            directors, and genres. Users are able to sign up, update their personal information, and create a list of
+            their favorite movies.</p>
+          <p>
+            MERN stack: MongoDB, Express, React + Redux & NodeJS.
           </p>
         </div>
         <div class="project-list__links">
-          <a href="https://github.com/lxnhard/portfolio-website" class="button" target="_blank">See project on
-            Github</a>
+          <a href="https://github.com/lxnhard/movie_app-client" class="button" target="_blank">Frontend &lt;&gt;</a>
+          <a href="https://github.com/lxnhard/movie_api" class="button" target="_blank">Backend &lt;&gt;</a>
         </div>
       </div>
 
@@ -64,60 +81,11 @@
           </p>
         </div>
         <div class="project-list__links">
-          <a href="https://github.com/lxnhard/pokedex-app" class="button" target="_blank">See project on Github</a>
+          <a href="https://github.com/lxnhard/pokedex-app" class="button" target="_blank">&lt;&gt; on Github</a>
         </div>
       </div>
 
 
-      <div class="project-list__item">
-        <img src="https://via.placeholder.com/1000x500.png?text=Screenshot%20of%20random%20project"
-          alt="Screenshot: Random project" class="project-list__image">
-        <div class="project-list__content">
-          <h3>Project name</h3>
-          <p>
-            description: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-            ut labore et dolore magna aliquyam erat, sed diam voluptua.
-          </p>
-        </div>
-        <div class="project-list__links">
-          <a href="#" class="button" target="_blank">See project on Github</a>
-        </div>
-      </div>
-      <div class="project-list__item">
-        <img src="https://via.placeholder.com/1000x500.png?text=Screenshot%20of%20random%20project"
-          alt="Screenshot: Random project" class="project-list__image">
-        <div class="project-list__content">
-          <h3>Project name</h3>
-          <p>
-            description: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-            ut labore et dolore magna aliquyam erat, sed diam voluptua.
-          </p>
-        </div>
-        <div class="project-list__links">
-          <a href="#" class="button" target="_blank">See project on Github</a>
-        </div>
-      </div>
-      <div class="project-list__item">
-        <img src="https://via.placeholder.com/1000x500.png?text=Screenshot%20of%20random%20project"
-          alt="Screenshot: Random project" class="project-list__image">
-        <div class="project-list__content">
-          <h3>Your project</h3>
-          <p>
-            I can help realizing front-end and back-end projects with the following technologies:
-          </p>
-          <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>Javascript</li>
-            <li>Python</li>
-            <li>Hypothetical technology X</li>
-            <li>Hypothetical technology Y</li>
-          </ul>
-        </div>
-        <div class="project-list__links">
-          <a href="mailto:nachname@test.d" class="button project__button__contact" target="_blank">Contact me</a>
-        </div>
-      </div>
 
 
     </div>
