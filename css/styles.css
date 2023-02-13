@@ -16,7 +16,7 @@ CHARADE - Dark shades
   --primary-color: #7691b2;
   --light-accent: #867caa;
   --dark-accent: #746a8b;
-  --light-shades: #faf9f8;
+  --light-shades: #ffffff;
   --dark-shades: #15151c;
   --text-color: #15151c;
 
@@ -57,7 +57,7 @@ h3 {
 }
 
 p {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 a {
@@ -91,40 +91,9 @@ body {
 
 main {
   width: 100%;
-  max-width: 768px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 10px;
-}
-
-.contact {
-  text-align: center;
-}
-
-.contact-form {
-  margin: 25px auto;
-  width: 50%;
-  text-align: justify;
-}
-
-@media all and (max-width: 500px) {
-  .contact-form {
-    width: 100%;
-  }
-}
-
-.contact-form textarea,
-.contact-form input {
-  width: 100%;
-  padding: 10px;
-}
-
-.contact-form button {
-  width: 100%;
-}
-
-.contact-form label {
-  font-size: 16px;
-  font-weight: var(--semibold);
 }
 
 button,
@@ -137,8 +106,6 @@ button,
   text-decoration: none;
   padding: 10px;
   border-radius: 3px;
-
-  /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
   border-bottom: 2px solid rgba(0, 0, 0, 0.3);
   transition: opacity 0.9s;
 }
@@ -147,37 +114,56 @@ button:hover,
 button:focus,
 .button:hover,
 .button:focus {
-  /* lets the mouse appear as a hand when hovering over the button */
   cursor: pointer;
-
-  /* reduces the opacity of the button to 80% */
   opacity: 0.8;
   text-decoration: none;
 }
 
+
+.navigation-list__button {
+  margin-left: 15px;
+  color: var(--light-accent);
+  background-color: transparent;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
 .profile {
-  max-width: 700px;
-  margin: 100px auto 200px;
+  max-width: 1280px;
+  margin: 100px auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.profile__portrait__container {
+  width: 100%;
+  text-align: center;
 }
 
 .profile__portrait {
-  float: left;
-  width: 100%;
   max-width: 250px;
   height: auto;
-  margin-right: 40px;
   border-radius: 50%;
 }
 
-@media all and (max-width: 500px) {
-  .profile__portrait {
-    display: block;
-    float: none;
-    margin: 0 auto;
+.profile__content {
+  text-align: center;
+}
+
+@media all and (min-width: 1024px) {
+  .profile__portrait__container {
+    flex: 1 2 auto;
+    width: 33.33%;
+    text-align: center;
   }
 
-  .profile {
-    text-align: center;
+  .profile__portrait {
+    max-width: 250px;
+    height: auto;
+  }
+
+  .profile__content {
+    width: 66.66%;
   }
 }
 
@@ -241,14 +227,10 @@ button:focus,
 
 .navigation-list__item:hover {
   text-decoration: none;
-  background-color: var(--primary-color);
-  color: var(--light-shades);
+  border-bottom: 4px solid var(--primary-color);
   transition: background-color 0.3s ease-out, color 0.3s ease-out;
 }
 
-.navigation-list__item--active {
-  border-bottom: 4px solid var(--primary-color);
-}
 
 @media all and (max-width: 593px) {
   .page-header {
@@ -293,84 +275,70 @@ button:focus,
   margin: 0;
 }
 
-/* Project grid list for Work page */
+/* Project grid list for project section */
 .work {
   text-align: center;
 }
 
-/* start grid fallback */
+.project-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+  margin: 15px;
+}
+
 .project-list__item {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  width: 33%;
-  text-align: justify;
-}
-
-/* end grid fallback */
-
-@supports (display: grid) {
-  .project-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 15px;
-    margin: 15px;
-  }
-}
-
-.project-list__item {
-  background-color: rgba(0, 0, 0, 0.05);
   width: auto;
   min-height: auto;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  box-shadow: 4px 3px 3px 2px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--primary-color);
+  box-shadow: 4px 3px 3px 2px var(--primary-color);
 }
 
-
-@media all and (max-width: 500px) {
+@media all and (min-width: 500px) {
   .project-list {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media all and (min-width: 500px) and (max-width: 768px) {
-  .project-list {
+    grid-gap: 20px;
     grid-template-columns: 1fr 1fr;
   }
 }
 
-@media all and (max-width: 768px) {
+
+@media all and (min-width: 768px) {
   .project-list {
-    grid-gap: 10px;
-  }
-
-  .project-list__item:last-child {
-    grid-column: auto / auto;
-    grid-row: auto / auto;
-  }
-
-  h1 {
-    font-size: 28px;
-  }
-
-  h2 {
-    font-size: 24px;
-  }
-
-  h3 {
-    font-size: 20px;
+    grid-gap: 40px;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 .project-list__content {
   margin: 0;
   padding: 0 10px;
-  flex-grow: 1;
+  flex: 3 1;
+  display: flex;
+  flex-direction: column;
 }
+
 
 .project-list__content h3 p {
   margin: 0;
   padding: 10px 0;
+}
+
+.project-list__content p {
+  font-size: 14px;
+}
+
+.project-list__content h1 {
+  font-size: 28px;
+}
+
+.project-list__content h2 {
+  font-size: 24px;
+}
+
+.project-list__content h3 {
+  font-size: 20px;
 }
 
 .project-list__image {
@@ -379,78 +347,43 @@ button:focus,
 }
 
 .project-list__links {
-  margin: 10px;
+  margin: auto auto 10px 10px;
   padding: 10px 0;
+  font-size: 14px;
+}
+
+
+/* ABOUT section */
+
+.about-main-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.about-element {
   width: 100%;
-}
-
-.project__button__contact {
-  background-color: var(--light-accent);
-}
-
-/* ABOUT page */
-
-/* start grid fallback */
-.about-content {
-  display: inline-block;
-  width: 33%;
-  font-size: 18px;
-}
-
-/* end grid fallback */
-
-@supports (display: grid) {
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-gap: 15px;
-    align-content: space-end;
-  }
-}
-
-.about-headline {
   text-align: center;
+  padding: 20px;
 }
 
 .about-image {
-  max-width: 90px;
+  width: 60px;
 }
 
-.about-content {
-  margin: 0;
-  padding: 0;
-  width: auto;
+.about-content * {
+  font-size: 14px;
 }
 
-.about-content p {
-  margin-top: 0;
-}
-
-@media all and (max-width: 768px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-    justify-content: center;
-    justify-items: center;
-    max-width: 75%;
-    margin: 0 auto;
+@media all and (min-width: 1024px) {
+  .about-main-container {
+    display: flex;
+    flex-direction: row;
   }
 
-  .about-content,
-  .about-content p {
+  .about-element {
+    flex: 1 1 0;
+    width: 0;
     text-align: center;
-  }
-
-  .about-image {
-    max-width: 60px;
-  }
-}
-
-@media all and (max-width: 500px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-    justify-content: center;
-    justify-items: center;
-    max-width: 100%;
-    margin: 0 auto;
   }
 }
