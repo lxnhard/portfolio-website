@@ -13,35 +13,42 @@
 
 <body>
   <header class="page-header">
-    <a href="index.html" class="page-header__item"><img src="img/logo.svg" class="page-header__logo"
-        alt="Logo of the name Leonhard Link with icon and text"></a>
+    <div class="page-header__brand">
+      <h1 class="page-header__brand__title">Leonhard Link</h1>
+      <p class="page-header__brand__label">web developer</p>
+    </div>
     <nav class="main-navigation page-header__item">
       <ul role="menubar" class="navigation-list">
         <li role="presentation">
-          <a href="#about-me" role="menuitem" class="navigation-list__item">About me</a>
+          <a href="#about-me" role="menuitem" class="navigation-list__item">About</a>
         </li>
         <li role="presentation">
           <a href="#work" role="menuitem" class="navigation-list__item">Work</a>
-        </li>
-        <li role="presentation">
-          <a href="mailto:lxnhard@gmail.com" role="button" class="button navigation-list__button">Contact me</a>
         </li>
       </ul>
     </nav>
   </header>
   <main>
-
     <section id="about-me">
       <div class="profile">
         <div class="profile__portrait__container">
-          <img src="img/portrait.jpg" class="profile__portrait" alt="Leonhard Link Portrait">
+          <!-- <img src="img/portrait.jpg" class="profile__portrait" alt="Leonhard Link Portrait"> -->
         </div>
         <div class="profile__content">
-          <h1>About me</h1>
+          <h2 class="profile__title">About me</h2>
           <p>
             My name is Leonhard Link. I am a certified fullstack web developer from Berlin, Germany.
+          </p>
+          <p>
+            I am currently most comfortable with the frontend framework React as well as NodeJS, Express, classic
+            Javascript, HTML and (S)CSS. Being enthusiastic about anything 3D, I am presently diving into ThreeJS and
+            WebGL.
+          </p>
+          <p>
             Before getting into web development, I have worked several years as an online marketing manager.
-            Therefore, I am experienced in communicating with clients, designers and developers.
+            During my career, I have contributed to new and existing web apps and websites in different roles, ranging
+            from content creation over SEO to project management. Having worked closely with software engineers and
+            designers, I made the choice to swap sides and become a developer myself.
           </p>
         </div>
       </div>
@@ -89,7 +96,7 @@
             <h3>Meetloaf</h3>
             <p>
               A serverless, progressive web application (PWA) that shows upcoming events in different cities built with
-              React using a test-driven development (TDD) approach. The application consumes the Google Calendar API
+              React using a test-driven development (TDD) approach. The application uses the Google Calendar API
               and Google authentication via AWS Lambda.</p>
           </div>
           <div class="project-list__links">
