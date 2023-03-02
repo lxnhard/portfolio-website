@@ -21,7 +21,10 @@
             <a href="#about-me" role="menuitem" class="navigation-list__item">About</a>
           </li>
           <li role="presentation">
-            <a href="#work" role="menuitem" class="navigation-list__item">Work</a>
+            <a href="#projects" role="menuitem" class="navigation-list__item">Projects</a>
+          </li>
+          <li role="presentation">
+            <a href="#contact" role="menuitem" class="navigation-list__item">Contact</a>
           </li>
         </ul>
       </nav>
@@ -48,7 +51,6 @@
             from content creation over SEO to project management. Having worked closely with software engineers and
             designers, I made the choice to swap sides and become a developer myself.
           </p>
-
         </div>
       </div>
 
@@ -84,8 +86,7 @@
       </div>
     </section>
 
-
-    <section class="work" id="work">
+    <section class="work" id="projects">
 
       <h2 class="section__header">Recent projects</h2>
       <div class="project-list">
@@ -179,23 +180,40 @@
 
       </div>
     </section>
-    <section class="contact">
-      <div>
-        <img src="img/icon-mail.svg" class="about-image">
-        <p>Feel free to drop me an E-Mail.</p>
-      </div>
-    </section>
 
+    <section class="contact" id="contact">
+      <h2 class="section__header">Contact</h2>
+      <div class="contact__container">
+        <a href="mailto:leolink.dev@gmail.com"><img src="img/icon-mail.svg" class="contact__icon"></a>
+        <p class="contact__text">If you are interested in working together with me, drop me an E-Mail: <a
+            href="mailto:leolink.dev@gmail.com">leolink.dev[at]gmail.com</a></p>
+      </div>
+
+      <h2>Contact Us</h2>
+      <form>
+        <label for="name">Name:</label>
+        <input name="name" type="text" /><br /><br />
+        <label for="email">Email:</label>
+        <input name="email" type="email" /><br /><br />
+        <label for="name">Message:</label>
+        <textarea name="message"></textarea><br /><br />
+        <input type="submit" />
+        <div>
+          <p id="result-text"></p>
+        </div>
+      </form>
+    </section>
 
   </main>
   <footer class="page-footer">
     <p>Find me on</p>
-    <div class="social-media">
-      <a href="https://github.com/lxnhard" target="_blank"><img src="img/github_icon.svg" class="social-media__icon"
+    <div class="footer">
+
+      <a href="https://github.com/lxnhard" target="_blank"><img src="img/github_icon.svg" class="footer__icon "
           alt="Github"></a>
 
       <a href="https://www.linkedin.com/in/leonhard-l" target="_blank"><img src="img/linkedin_icon.svg"
-          class="social-media__icon" alt="LinkedIn"></a>
+          class="footer__icon" alt="LinkedIn"></a>
     </div>
   </footer>
 </body>
