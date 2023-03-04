@@ -1,39 +1,38 @@
 import './style.css';
 import './cube.js';
+import './form.js';
+
+const modal = document.querySelector(".modal");
+const trigger = document.querySelector(".contact__button");
+const closeButton = document.querySelector(".close-button");
+
+function toggleModal() {
+  modal.classList.toggle("show-modal");
+}
+
+function windowOnClick(event) {
+  if (event.target === modal) {
+    toggleModal();
+  }
+}
+
+trigger.addEventListener("click", toggleModal);
+closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick);
 
 
+const menuButton = document.querySelector(".menu__button");
+const navList = document.querySelector(".navigation-list");
+const brand = document.querySelector(".page-header__brand");
+const brandTitle = document.querySelector(".page-header__brand__title");
+const brandLabel = document.querySelector(".page-header__brand__label");
 
+function toggleNav() {
+  menuButton.classList.toggle("menu__button--rotate");
+  navList.classList.toggle("mobile--hidden");
+  brand.classList.toggle("mobile--hidden");
+  brandTitle.classList.toggle("mobile--hidden");
+  brandLabel.classList.toggle("mobile--hidden");
+}
 
-
-
-const form = document.querySelector("form");
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const { name, email, message } = event.target;
-
-  const body = JSON.stringify({
-    name: name.value,
-    email: email.value,
-    message: message.value
-  });
-  const requestOptions = {
-    method: "POST",
-    body
-  };
-
-  fetch("https://qdlweyi09f.execute-api.us-east-1.amazonaws.com/emailpost", requestOptions)
-    .then((response) => {
-      if (!response.ok) throw new Error("Error in fetch");
-      return response.json();
-    })
-    .then((response) => {
-      document.getElementById("result-text").innerText =
-        "Email sent successfully!";
-      console.log(response);
-    })
-    .catch((error) => {
-      document.getElementById("result-text").innerText =
-        "An unkown error occured.";
-      console.log(error);
-    });
-});
+menuButton.addEventListener("click", toggleNav);

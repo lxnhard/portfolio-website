@@ -16,7 +16,7 @@
         <p class="page-header__brand__label">web developer</p>
       </div>
       <nav class="main-navigation page-header__item">
-        <ul role="menubar" class="navigation-list">
+        <ul role="menubar" class="navigation-list mobile--hidden">
           <li role="presentation">
             <a href="#about-me" role="menuitem" class="navigation-list__item">About</a>
           </li>
@@ -24,13 +24,17 @@
             <a href="#projects" role="menuitem" class="navigation-list__item">Projects</a>
           </li>
           <li role="presentation">
-            <a href="#contact" role="menuitem" class="navigation-list__item">Contact</a>
+            <a role="menuitem button" class="navigation-list__item contact__button">Contact</a>
           </li>
         </ul>
       </nav>
+      <img src="img/menu_icon.svg" alt="show navigation" class="menu__button">
     </div>
   </header>
+
   <main>
+
+
     <section id="about-me">
       <div class="profile">
         <div class="profile__model__container" id="three-container">
@@ -181,27 +185,40 @@
       </div>
     </section>
 
-    <section class="contact" id="contact">
-      <h2 class="section__header">Contact</h2>
-      <div class="contact__container">
-        <a href="mailto:leolink.dev@gmail.com"><img src="img/icon-mail.svg" class="contact__icon"></a>
-        <p class="contact__text">If you are interested in working together with me, drop me an E-Mail: <a
-            href="mailto:leolink.dev@gmail.com">leolink.dev[at]gmail.com</a></p>
-      </div>
+    <section class="contact">
+      <div class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title">Contact</h2>
+            <button type="button" aria-label="Close" class="close-button">
+              <span aria-hidden="true" class="close-icon"></span>
+            </button>
+          </div>
 
-      <h2>Contact Us</h2>
-      <form>
-        <label for="name">Name:</label>
-        <input name="name" type="text" /><br /><br />
-        <label for="email">Email:</label>
-        <input name="email" type="email" /><br /><br />
-        <label for="name">Message:</label>
-        <textarea name="message"></textarea><br /><br />
-        <input type="submit" />
-        <div>
-          <p id="result-text"></p>
+          <p class="contact__text">If you are interested in working together with me, use this form or send me an
+            Email: <a href="mailto:leolink.dev@gmail.com">leolink.dev[at]gmail.com</a></p>
+          </p>
+          <form class="contact-form">
+            <div class="contact-form__element">
+              <label for="name" class="contact-form__label">Name:</label>
+              <input name="name" type="text" class="contact-form__input" required />
+            </div>
+            <div class="contact-form__element">
+              <label for="email" class="contact-form__label">Email:</label>
+              <input name="email" type="email" class="contact-form__input" required />
+            </div>
+            <div class="contact-form__element">
+              <label for="name" class="contact-form__label">Message:</label>
+              <textarea name="message" class="contact-form__text" required></textarea>
+            </div>
+
+            <button type="submit" class="button contact-form__submit">Send</button>
+            <div>
+              <p id=" result-text"></p>
+            </div>
+          </form>
         </div>
-      </form>
+      </div>
     </section>
 
   </main>
