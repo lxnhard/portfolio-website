@@ -1,6 +1,15 @@
 import './style.css';
-import * as THREE from 'three';
+// import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import {
+  PerspectiveCamera,
+  Scene,
+  Fog,
+  AnimationMixer,
+  WebGLRenderer,
+  sRGBEncoding,
+  MathUtils
+} from 'three';
 
 let camera, scene, renderer;
 let mesh, mixer;
@@ -21,11 +30,11 @@ function init() {
   const containerHeight = document.getElementById('three-container').clientHeight;
 
 
-  camera = new THREE.PerspectiveCamera(45, containerWidth / containerHeight, 0.25, 5);
+  camera = new PerspectiveCamera(45, containerWidth / containerHeight, 0.25, 5);
   camera.position.set(0, 2.2, 0);
 
-  scene = new THREE.Scene();
-  scene.fog = new THREE.Fog(0xffffff, 3, 4);
+  scene = new Scene();
+  scene.fog = new Fog(0xffffff, 3, 4);
 
   const loader = new GLTFLoader();
 
@@ -34,14 +43,14 @@ function init() {
     mesh.position.set(0, 0, 0);
 
     scene.add(mesh);
-    mixer = new THREE.AnimationMixer(mesh);
+    mixer = new AnimationMixer(mesh);
     render();
   });
 
-  renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  renderer = new WebGLRenderer({ antialias: true, alpha: true });
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(containerWidth, containerHeight);
-  renderer.outputEncoding = THREE.sRGBEncoding;
+  renderer.outputEncoding = sRGBEncoding;
   container.appendChild(renderer.domElement);
 
   window.addEventListener('resize', onWindowResize);
@@ -74,8 +83,8 @@ function render() {
 
   theta += 0.3;
 
-  camera.position.x = radius * Math.sin(THREE.MathUtils.degToRad(theta));
-  camera.position.z = radius * Math.cos(THREE.MathUtils.degToRad(theta));
+  camera.position.x = radius * Math.sin(MathUtils.degToRad(theta));
+  camera.position.z = radius * Math.cos(MathUtils.degToRad(theta));
   camera.lookAt(0, -.1, 0);
 
 
