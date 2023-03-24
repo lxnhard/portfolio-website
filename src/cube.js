@@ -103,7 +103,8 @@ function animate() {
     }
 
     if (cubeActive) {
-      cubeActive.rotation.x += 0.01;
+      if (intersection[0].point)
+        cubeActive.rotation.x += 0.01;
     }
   }
   render();
