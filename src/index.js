@@ -1,6 +1,11 @@
+import lozad from 'lozad'
 import './style.css';
 import './cube.js';
 import './form.js';
+
+
+const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+observer.observe();
 
 const modal = document.querySelector(".modal");
 const trigger = document.querySelector(".contact__button");
