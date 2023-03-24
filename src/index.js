@@ -1,4 +1,4 @@
-import lozad from 'lozad'
+import lozad from 'lozad';
 import './style.css';
 import './cube.js';
 import './form.js';
