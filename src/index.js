@@ -1,6 +1,7 @@
 import lozad from 'lozad';
+import anime from 'animejs/lib/anime.es.js';
 import './style.css';
-import './cube.js';
+// import './cube.js';
 import './form.js';
 
 
@@ -41,3 +42,33 @@ function toggleNav() {
 }
 
 menuButton.addEventListener("click", toggleNav);
+
+
+// Wrap every letter in a span
+let textWrapper = document.querySelector('.ml10 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({ loop: false })
+  .add({
+    targets: '.ml10 .letter',
+    rotateY: [-90, 0],
+    duration: 2600,
+    delay: (el, i) => 90 * i
+  })
+
+
+
+// addEventListener("scroll", (event) => {
+//   let rect = textWrapper.getBoundingClientRect();
+//   console.log(rect.y);
+//   if (rect.y <= 90) {
+//     anime.timeline({ loop: false })
+//       .add({
+//         targets: '.ml10',
+//         opacity: 0,
+//         duration: 1000,
+//         easing: "easeOutExpo",
+//         delay: 0
+//       });
+//   };
+// });

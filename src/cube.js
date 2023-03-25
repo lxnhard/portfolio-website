@@ -47,7 +47,7 @@ function init() {
     mesh = gltf.scene;
     mesh.position.set(0, 0, 0);
     scene.add(mesh);
-    console.log(mesh);
+    // console.log(mesh);
     mixer = new AnimationMixer(mesh);
     render();
   });
@@ -98,7 +98,7 @@ function animate() {
 
     if (intersection.length > 0) {
 
-      console.log(intersection[0]);
+      // console.log(intersection[0]);
       cubeActive = intersection[0].object;
     }
 

@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "animejs": "^3.2.1",
     "lozad": "^1.16.0",
     "three": "^0.149.0"
   },
