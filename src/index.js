@@ -27,6 +27,8 @@ closeButton.addEventListener("click", toggleModal);
 window.addEventListener("click", windowOnClick);
 
 
+// navigation 
+
 const menuButton = document.querySelector(".menu__button");
 const navList = document.querySelector(".navigation-list");
 const brand = document.querySelector(".page-header__brand");
@@ -43,19 +45,79 @@ function toggleNav() {
 
 menuButton.addEventListener("click", toggleNav);
 
+// sections
 
-// Wrap every letter in a span
-let textWrapper = document.querySelector('.ml10 .letters');
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+const sectionProfile = document.querySelector(".section-profile");
+const sectionProfileContent = document.querySelector(".profile");
+const sectionWork = document.querySelector(".section-work");
+const sectionWorkContent = document.querySelector(".project-list");
+const navigationLinkAbout = document.querySelector("#navigation-link-about");
+const navigationLinkWork = document.querySelector("#navigation-link-work");
+
+
+function toggleSections(sectionActivate) {
+
+  if (sectionActivate.classList.contains("section--hidden")) {
+
+    // identify DOM elements
+    const sectionDeactivate = (sectionActivate == sectionProfile) ? sectionWork : sectionProfile;
+    const headerActivate = (sectionActivate == sectionProfile) ? '.section-profile .section__header .letter' : '.section-work .section__header .letter'
+    const headerDeactivate = (sectionActivate != sectionProfile) ? '.section-profile .section__header .letter' : '.section-work .section__header .letter'
+    const contentActivate = (sectionActivate == sectionProfile) ? sectionProfileContent : sectionWorkContent;
+    const contentDeactivate = (sectionActivate != sectionProfile) ? sectionProfileContent : sectionWorkContent;
+
+    // animate
+    anime.timeline({ loop: false })
+      .add({
+        targets: contentDeactivate,
+        opacity: '0',
+        duration: 520,
+        easing: 'easeInSine',
+      })
+      .add({
+        targets: headerDeactivate,
+        rotateY: [0, -90],
+        duration: 520,
+        easing: 'easeInSine',
+        delay: anime.stagger(45, { direction: 'reverse' }),
+        complete: function () {
+          sectionActivate.classList.toggle("section--hidden");
+          sectionDeactivate.classList.toggle("section--hidden");
+        },
+      }, '-=520')
+      .add({
+        targets: headerActivate,
+        rotateY: [-90, 0],
+        duration: 520,
+        easing: 'easeInSine',
+        delay: anime.stagger(45),
+      })
+      .add({
+        targets: contentActivate,
+        opacity: '1',
+        duration: 520,
+        easing: 'easeInSine',
+      }, '-=520')
+  }
+}
+
+navigationLinkAbout.addEventListener("click", () => { toggleSections(sectionProfile) });
+navigationLinkWork.addEventListener("click", () => { toggleSections(sectionWork) });
+
+
+// H2 animation
+let textWrapper = document.querySelectorAll('.section__header .letters');
+textWrapper[0].innerHTML = textWrapper[0].textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+textWrapper[1].innerHTML = textWrapper[1].textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
 anime.timeline({ loop: false })
   .add({
-    targets: '.ml10 .letter',
+    targets: '.section-profile .section__header .letter',
     rotateY: [-90, 0],
-    duration: 2600,
-    delay: (el, i) => 90 * i
+    duration: 520,
+    easing: 'easeInSine',
+    delay: anime.stagger(45)
   })
-
 
 
 // addEventListener("scroll", (event) => {
@@ -64,7 +126,7 @@ anime.timeline({ loop: false })
 //   if (rect.y <= 90) {
 //     anime.timeline({ loop: false })
 //       .add({
-//         targets: '.ml10',
+//         targets: '.section__header',
 //         opacity: 0,
 //         duration: 1000,
 //         easing: "easeOutExpo",
