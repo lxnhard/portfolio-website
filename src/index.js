@@ -49,20 +49,24 @@ menuButton.addEventListener("click", toggleNav);
 
 const sectionProfile = document.querySelector(".section-profile");
 const sectionProfileContent = document.querySelector(".profile");
-const sectionWork = document.querySelector(".section-work");
+const sectionWork = document.querySelector(".section-projects");
 const sectionWorkContent = document.querySelector(".project-list");
 const navigationLinkAbout = document.querySelector("#navigation-link-about");
 const navigationLinkWork = document.querySelector("#navigation-link-work");
 
+let animationInProgress = false;
 
 function toggleSections(sectionActivate) {
+
+  if (animationInProgress) return;
+  animationInProgress = true;
 
   if (sectionActivate.classList.contains("section--hidden")) {
 
     // identify DOM elements
     const sectionDeactivate = (sectionActivate == sectionProfile) ? sectionWork : sectionProfile;
-    const headerActivate = (sectionActivate == sectionProfile) ? '.section-profile .section__header .letter' : '.section-work .section__header .letter'
-    const headerDeactivate = (sectionActivate != sectionProfile) ? '.section-profile .section__header .letter' : '.section-work .section__header .letter'
+    const headerActivate = (sectionActivate == sectionProfile) ? '.section-profile .section__header .letter' : '.section-projects .section__header .letter'
+    const headerDeactivate = (sectionActivate != sectionProfile) ? '.section-profile .section__header .letter' : '.section-projects .section__header .letter'
     const contentActivate = (sectionActivate == sectionProfile) ? sectionProfileContent : sectionWorkContent;
     const contentDeactivate = (sectionActivate != sectionProfile) ? sectionProfileContent : sectionWorkContent;
 
@@ -72,7 +76,7 @@ function toggleSections(sectionActivate) {
         targets: contentDeactivate,
         opacity: '0',
         duration: 520,
-        easing: 'easeInSine',
+        easing: 'easeInSine'
       })
       .add({
         targets: headerDeactivate,
@@ -97,8 +101,12 @@ function toggleSections(sectionActivate) {
         opacity: '1',
         duration: 520,
         easing: 'easeInSine',
+        complete: function () {
+          animationInProgress = false;
+        }
       }, '-=520')
   }
+  animationInProgress = false;
 }
 
 navigationLinkAbout.addEventListener("click", () => { toggleSections(sectionProfile) });
@@ -119,18 +127,3 @@ anime.timeline({ loop: false })
     delay: anime.stagger(45)
   })
 
-
-// addEventListener("scroll", (event) => {
-//   let rect = textWrapper.getBoundingClientRect();
-//   console.log(rect.y);
-//   if (rect.y <= 90) {
-//     anime.timeline({ loop: false })
-//       .add({
-//         targets: '.section__header',
-//         opacity: 0,
-//         duration: 1000,
-//         easing: "easeOutExpo",
-//         delay: 0
-//       });
-//   };
-// });

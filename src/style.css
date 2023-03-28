@@ -339,6 +339,7 @@ button:focus,
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 20px;
+  opacity: 0;
 }
 
 .project-list__item {
@@ -578,6 +579,7 @@ button:focus,
   display: flex;
   text-align: center;
   justify-content: center;
+  margin-top: 20px;
 }
 
 .footer__icon {
