@@ -127,3 +127,25 @@ anime.timeline({ loop: false })
     delay: anime.stagger(45)
   })
 
+
+
+let card = document.querySelectorAll(".card");
+
+card.forEach(item => {
+  item.addEventListener('click', function () {
+    if (animationInProgress)
+      return;
+
+    animationInProgress = true;
+    anime({
+      targets: item,
+      scale: [{ value: 1 }, { value: 1.1 }, { value: 1, delay: 250 }],
+      rotateY: { value: '+=180', delay: 200 },
+      easing: 'easeInOutSine',
+      duration: 400,
+      complete: function () {
+        animationInProgress = false;
+      }
+    });
+  });
+});
