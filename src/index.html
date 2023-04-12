@@ -12,8 +12,8 @@
   <header class="page-header-container">
     <div class="page-header">
       <div class="page-header__brand">
-        <h1 class="page-header__brand__title">Leonhard Link</h1>
-        <p class="page-header__brand__label">web developer</p>
+        <h1 class="page-header__brand__title">Leonhard&nbsp;Link</h1>
+        <p class="page-header__brand__label">web&nbsp;developer</p>
       </div>
       <nav class="main-navigation page-header__item">
         <ul role="menubar" class="navigation-list mobile--hidden">
@@ -24,7 +24,7 @@
             <a role="menuitem" class="navigation-list__item" id="navigation-link-work">Projects</a>
           </li>
           <li role="presentation">
-            <a role="menuitem button" class="navigation-list__item contact__button">Contact</a>
+            <a role="menuitem" class="navigation-list__item" id="navigation-link-contact">Contact</a>
           </li>
         </ul>
       </nav>
@@ -35,7 +35,7 @@
   <main>
 
 
-    <section class="section section-profile" id="about-me">
+    <section class="section section-profile">
       <h2 class="section__header">
         <span class="text-wrapper">
           <span class="letters">About me</span>
@@ -66,7 +66,7 @@
       </div>
     </section>
 
-    <section class="section section-projects section--hidden" id="projects">
+    <section class="section section-projects section--hidden">
 
       <h2 class="section__header">
         <span class="text-wrapper">
@@ -91,8 +91,7 @@
             <div class="card-back">
               <div class="card-back-content">
                 <p>Client-side for a single page web application providing authenticated users
-                  with information about different movies, built with React and Redux. The entire app is built with MERN
-                  stack.</p>
+                  with information about different movies, built with React and Redux.</p>
                 <p>The web application uses the MERN stack to provide users with access to
                   information about different
                   movies, directors, and genres. Users are able to sign up, update their profile, and
@@ -298,46 +297,39 @@
             </div>
           </div>
         </div>
-
       </div>
-
-
-
     </section>
 
-    <section class="contact">
-      <div class="modal">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2 class="modal-title">Contact</h2>
-            <button type="button" aria-label="Close" class="close-button">
-              <span aria-hidden="true" class="close-icon"></span>
-            </button>
+    <section class="section section-contact section--hidden">
+      <h2 class="section__header">
+        <span class="text-wrapper">
+          <span class="letters">Contact</span>
+        </span>
+      </h2>
+      <div class="contact">
+
+        <p class="contact__text">If you are interested in working together with me, use this form or send me an
+          Email: <a href="mailto:leolink.dev@gmail.com">leolink.dev[at]gmail.com</a></p>
+        </p>
+        <form class="contact-form">
+          <div class="contact-form__element">
+            <label for="name" class="contact-form__label">Name:*</label>
+            <input name="name" type="text" class="contact-form__input" required />
+          </div>
+          <div class="contact-form__element">
+            <label for="email" class="contact-form__label">Email:*</label>
+            <input name="email" type="email" class="contact-form__input" required />
+          </div>
+          <div class="contact-form__element">
+            <label for="name" class="contact-form__label">Message:*</label>
+            <textarea name="message" class="contact-form__text" required></textarea>
           </div>
 
-          <p class="contact__text">If you are interested in working together with me, use this form or send me an
-            Email: <a href="mailto:leolink.dev@gmail.com">leolink.dev[at]gmail.com</a></p>
-          </p>
-          <form class="contact-form">
-            <div class="contact-form__element">
-              <label for="name" class="contact-form__label">Name:</label>
-              <input name="name" type="text" class="contact-form__input" required />
-            </div>
-            <div class="contact-form__element">
-              <label for="email" class="contact-form__label">Email:</label>
-              <input name="email" type="email" class="contact-form__input" required />
-            </div>
-            <div class="contact-form__element">
-              <label for="name" class="contact-form__label">Message:</label>
-              <textarea name="message" class="contact-form__text" required></textarea>
-            </div>
-
-            <button type="submit" class="button contact-form__submit">Send</button>
-            <div>
-              <p id="result-text"></p>
-            </div>
-          </form>
-        </div>
+          <button type="submit" class="button contact-form__submit">Send</button>
+          <div>
+            <p id="result-text"></p>
+          </div>
+        </form>
       </div>
     </section>
 
