@@ -1,8 +1,7 @@
 {
   "dependencies": {
     "animejs": "^3.2.1",
-    "lozad": "^1.16.0",
-    "three": "^0.149.0"
+    "lozad": "^1.16.0"
   },
   "devDependencies": {
     "@yushijinhun/three-minifier-webpack": "^0.4.0",
@@ -17,8 +16,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",

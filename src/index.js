@@ -38,6 +38,8 @@ const navigationLinkAbout = document.querySelector("#navigation-link-about");
 const navigationLinkWork = document.querySelector("#navigation-link-work");
 const navigationLinkContact = document.querySelector("#navigation-link-contact");
 
+const scrollElement = window.document.scrollingElement || window.document.body || window.document.documentElement;
+
 let sectionDeactivate = sectionProfile;
 
 let animationInProgress = false;
@@ -88,6 +90,12 @@ function toggleSections(sectionActivate) {
     // animate
     anime.timeline({ loop: false })
       .add({
+        targets: scrollElement,
+        scrollTop: 0,
+        duration: 500,
+        easing: 'easeInOutQuad'
+      })
+      .add({
         targets: contentDeactivate,
         opacity: '0',
         duration: 520,
@@ -123,7 +131,6 @@ function toggleSections(sectionActivate) {
       }, '-=520')
   }
   animationInProgress = false;
-
 }
 
 navigationLinkAbout.addEventListener("click", () => { toggleSections(sectionProfile) });
@@ -145,12 +152,19 @@ anime.timeline({ loop: false })
     easing: 'easeInSine',
     delay: anime.stagger(45)
   })
+  .add({
+    targets: sectionProfileContent,
+    opacity: '1',
+    duration: 520,
+    easing: 'easeInSine',
+  }, '-=520')
 
 
 
 let card = document.querySelectorAll(".card");
 
 card.forEach(item => {
+  // click => turn card
   item.addEventListener('click', function () {
     if (animationInProgress)
       return;
@@ -158,7 +172,7 @@ card.forEach(item => {
     animationInProgress = true;
     anime({
       targets: item,
-      scale: [{ value: 1 }, { value: 1.1 }, { value: 1, delay: 250 }],
+      scale: [{ value: 1 }, { value: 1.05 }, { value: 1, delay: 250 }],
       rotateY: { value: '+=180', delay: 200 },
       easing: 'easeInOutSine',
       duration: 400,
@@ -167,4 +181,58 @@ card.forEach(item => {
       }
     });
   });
+
+  // hover
+  // item.addEventListener('mouseenter', function () {
+  //   if (animationInProgress)
+  //     return;
+  //   animationInProgress = true;
+
+  //   anime.timeline({ loop: false })
+  //     .add({
+  //       targets: item,
+  //       rotateZ: { value: '+=5' },
+  //       duration: 100,
+  //       easing: 'easeInOutSine',
+  //     })
+  //     .add({
+  //       targets: item,
+  //       rotateZ: { value: '-=10' },
+  //       duration: 100,
+  //       easing: 'easeInOutSine',
+  //     })
+  //     .add({
+  //       targets: item,
+  //       rotateZ: { value: '+=8' },
+  //       duration: 100,
+  //       easing: 'easeInOutSine',
+  //     })
+  //     .add({
+  //       targets: item,
+  //       rotateZ: { value: '-=6' },
+  //       duration: 100,
+  //       easing: 'easeInOutSine',
+  //     })
+  //     .add({
+  //       targets: item,
+  //       rotateZ: { value: '+=5' },
+  //       duration: 100,
+  //       easing: 'easeInOutSine',
+  //     })
+  //     .add({
+  //       targets: item,
+  //       rotateZ: { value: '-=2' },
+  //       duration: 100,
+  //       easing: 'easeInOutSine',
+  //     })
+  //     .add({
+  //       targets: item,
+  //       rotateZ: { value: '0' },
+  //       duration: 100,
+  //       easing: 'easeInOutSine',
+  //       complete: function () {
+  //         animationInProgress = false;
+  //       }
+  //     })
+  // });
 });

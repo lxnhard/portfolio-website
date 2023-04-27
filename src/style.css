@@ -210,7 +210,7 @@ button:focus,
   display: inline-block;
   color: var(--dark-shades);
   text-transform: uppercase;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 18px;
   font-family: 'Montserrat', sans-serif;
   display: table-cell;
@@ -219,9 +219,10 @@ button:focus,
   padding: 0 10px;
 }
 
-.navigation-list__item:hover {
+.navigation-list__item:hover,
+.navigation-list__item:focus {
   text-decoration: none;
-  font-weight: 500;
+  color: #2C74B3;
   cursor: pointer;
 }
 
@@ -300,48 +301,47 @@ button:focus,
 /* Profile / Hero */
 
 .profile {
-  display: flex;
-  flex-wrap: wrap;
   max-width: 1440px;
-  justify-content: space-between;
+  opacity: 0;
+  padding: 20px;
+  box-shadow: 5px 5px 15px 5px #dddddd;
+}
+
+
+@media all and (min-width: 500px) {
+
+  .profile {
+    padding: 40px;
+  }
+}
+
+.profile__content {
+  max-width: 768px;
+}
+
+.profile__content p:first-child {
+  font-size: 20px;
+  margin-top: 0;
 }
 
 .profile__image {
   height: 200px;
   width: 150px;
-  margin-top: 20px;
+  float: left;
 }
 
-@media all and (min-width: 768px) {
-
-  .profile {
-    flex-wrap: nowrap;
-  }
-
-  .profile__content {
-    /* padding-left: 200px; */
-    padding-left: 50px;
-  }
-
-  .profile__image {
-    height: 200px;
-    width: 150px;
-  }
-
+.profile__tech-tag-container {
+  margin-top: 40px;
 }
 
-@media all and (min-width: 1024px) {
+.profile__tech-tag-container p {
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
 
-  .profile__content {
-    /* padding-left: 200px; */
-    padding-left: 50px;
-  }
-
-  .profile__image {
-    height: 200px;
-    width: 150px;
-  }
-
+.profile__tech-tag {
+  line-height: 3em;
 }
 
 /* Project grid list for project section */
@@ -381,7 +381,7 @@ button:focus,
   width: 100%;
   transform-style: preserve-3d;
   border-radius: 4px;
-  border: 1px solid rgba(0, 0, 0, .2);
+  box-shadow: 3px 3px 6px 3px #dddddd;
 }
 
 .card-front,
@@ -487,11 +487,10 @@ button:focus,
 /* Contact modal */
 
 .section-contact {
-  max-width: 768px;
+  max-width: 500px;
 }
 
 .contact {
-  max-width: 500px;
   opacity: 0;
 }
 
@@ -550,7 +549,8 @@ button:focus,
   vertical-align: bottom;
 }
 
-.footer__icon:hover {
+.footer__icon:hover,
+.footer__icon:focus {
   width: 40px;
   margin: 0;
 }
