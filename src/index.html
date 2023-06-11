@@ -12,8 +12,10 @@
   <header class="page-header-container">
     <div class="page-header">
       <div class="page-header__brand">
-        <h1 class="page-header__brand__title">Leonhard&nbsp;Link</h1>
-        <p class="page-header__brand__label">web&nbsp;developer</p>
+        <a href="index.html" class="page-header__brand__link">
+          <h1 class="page-header__brand__title">Leonhard&nbsp;Link</h1>
+          <p class="page-header__brand__label">web&nbsp;developer</p>
+        </a>
       </div>
       <nav class="main-navigation page-header__item">
         <ul role="menubar" class="navigation-list mobile--hidden">
@@ -43,46 +45,67 @@
       </h2>
       <div class="profile">
         <!-- <img src="img/placeholder.jpg" class="profile__image"> -->
-        <div class="profile__content">
-          <p>
-            My name is Leonhard Link. I am a certified fullstack web developer from Berlin, Germany.
-          </p>
-          <p>
-            In April 2023, I have completed a comprehensive coding bootcamp at CareerFoundry.
-            I primarily work with the frontend framework React as well as NodeJS and Express. Besides that, I am
-            enthusiastic about cloud computing and AWS.
-          </p>
-          <p>
-            Currently, I am still working as an online marketing manager in the health and social
-            sector. My expertise in that field involves project management, content management and SEO for websites and
-            web apps. Having worked closely with software engineers and web designers, I am familiar with the customer
-            side of the development process.
-          </p>
+        <div class="profile__content__container">
+          <div class="profile__content">
+            <p>
+              Certified fullstack web developer.
+              Berlin, Germany.
+            </p>
+            <p>
+              In April 2023, I have completed a comprehensive coding bootcamp at CareerFoundry.
+              I primarily work with React, Node and Express. Besides that, I am
+              enthusiastic about cloud computing and AWS.
+            </p>
+            <h3>My background</h3>
+            <p>
+              Currently, I am still working as an online marketing manager in the health and social
+              sector. My expertise in that field involves project management, content management and SEO for websites
+              and
+              web apps. Having worked closely with software engineers and web designers, I am familiar with the customer
+              side of the development process.
+            </p>
+            <p>
+              <a href="files/CV_Leonhard Link.pdf" title="Download CV (new window)" target="_blank">Learn more in my
+                CV.</a>
+            </p>
+          </div>
 
-          <button type="download" class="button" title="Download CV">Download my CV</button>
-          <button type="download" class="button button-secondary" title="Contact">Contact me</button>
         </div>
-        <div class="profile__tech-tag-container">
-          <p>Technologies I have worked with:</p>
-          <span class="tech-tag profile__tech-tag">HTML</span>
-          <span class="tech-tag profile__tech-tag">CSS</span>
-          <span class="tech-tag profile__tech-tag">Javascript</span>
-          <span class="tech-tag profile__tech-tag">Typescript</span>
-          <span class="tech-tag profile__tech-tag">React</span>
-          <span class="tech-tag profile__tech-tag">React&nbsp;Native</span>
-          <span class="tech-tag profile__tech-tag">Redux</span>
-          <span class="tech-tag profile__tech-tag">Angular</span>
-          <span class="tech-tag profile__tech-tag">NodeJS</span>
-          <span class="tech-tag profile__tech-tag">Express</span>
-          <span class="tech-tag profile__tech-tag">MongoDB</span>
-          <span class="tech-tag profile__tech-tag">Amazon&nbsp;Web&nbsp;Services&nbsp;(AWS)</span>
+
+
+        <div class="profile__content__container">
+          <div class="profile__tech-tag-container">
+            <h3>My tech stack</h3>
+            <span class="tech-tag profile__tech-tag">HTML</span>
+            <span class="tech-tag profile__tech-tag">CSS</span>
+            <span class="tech-tag profile__tech-tag">Javascript</span>
+            <span class="tech-tag profile__tech-tag">Typescript</span>
+            <span class="tech-tag profile__tech-tag">React</span>
+            <span class="tech-tag profile__tech-tag">React&nbsp;Native</span>
+            <span class="tech-tag profile__tech-tag">Redux</span>
+            <span class="tech-tag profile__tech-tag">Angular</span>
+            <span class="tech-tag profile__tech-tag">Amazon&nbsp;Web&nbsp;Services&nbsp;(AWS)</span>
+            <span class="tech-tag profile__tech-tag">NodeJS</span>
+            <span class="tech-tag profile__tech-tag">Express</span>
+            <span class="tech-tag profile__tech-tag">MongoDB</span>
+          </div>
+
         </div>
-      </div>
+
+        <div class="profile__content__container cta">
+          <div>
+            <p class="cta-title">Interested in working together?</p>
+            <p class="cta-text">Feel free to contact me!</p>
+          </div>
+          <div>
+            <button type="button" class="button cta-button" title="Contact me" id="contact-button">Contact me</button>
+          </div>
+        </div>
     </section>
 
     <section class="section section-projects section--hidden">
 
-      <h2 class="section__header">
+      <h2 class="section__header section-projects__header">
         <span class="text-wrapper">
           <span class="letters">Projects</span>
         </span>
@@ -94,27 +117,37 @@
             <div class="card-front" title="Learn more">
               <img src="img/movie-app.jpg" alt="Watch-Til-Death React" class="lozad card__image">
               <div class="card-front-content">
-                <h3 class="card__title">Watch-Til-Death (React)</h3>
+                <h3 class="card__title">Watch-Til-Death (React/AWS)</h3>
+                <p>Client-side for a single page web application providing authenticated users
+                  with information about different movies, built with React and Redux.</p>
                 <div class="tech-tag-container">
                   <span class="tech-tag">React</span>
                   <span class="tech-tag">Redux</span>
                   <span class="tech-tag">Javascript</span>
+                  <span class="tech-tag">AWS</span>
                 </div>
               </div>
             </div>
             <div class="card-back" title="See overview">
               <div class="card-back-content">
+                <!-- <h4>Overview</h4>
                 <p>Client-side for a single page web application providing authenticated users
-                  with information about different movies, built with React and Redux.</p>
+                  with information about different movies, built with React and Redux.</p> -->
+                <h4>Tech stack</h4>
                 <p>The web application uses the MERN stack to provide users with access to
                   information about different
                   movies, directors, and genres. Users are able to sign up, update their profile, and
-                  create
-                  a list of their favorite movies.
+                  create a list of their favorite movies.
                 </p>
+                <h4>Deployment</h4>
                 <p>
-                  <strong>Technologies: </strong>React, Redux, Javascript
+                  Deployed with Amazon Web Services using a custom VPC, redundant EC2 instances in different
+                  availability zones, S3 buckets for client side and file storage, and Lambda for serverless
+                  functions.
                 </p>
+                <!-- <p>
+                  <strong>Technologies: </strong>React, Redux, Javascript, Amazon Web Services
+                </p> -->
               </div>
               <div class="card-links">
                 <div class="card-icon-container">
@@ -136,24 +169,25 @@
               <img src="img/movie-app-angular.jpg" alt="Watch-Til-Death Angular" class="lozad card__image">
               <div class="card-front-content">
                 <h3 class="card__title">Watch-Til-Death (Angular)</h3>
+                <p>Client-side for a single page web application providing authenticated users
+                  with information about different movies, built with Angular.</p>
                 <div class="tech-tag-container">
                   <span class="tech-tag">Angular</span>
-                  <span class="tech-tag">Angular Material</span>
+                  <span class="tech-tag">Angular&nbsp;Material</span>
                   <span class="tech-tag">Javascript</span>
                 </div>
               </div>
             </div>
             <div class="card-back" title="See overview">
               <div class="card-back-content">
+                <!-- <h4>Overview</h4>
                 <p>Client-side for a single page web application providing authenticated users
-                  with information about different movies, built with Angular.</p>
+                  with information about different movies, built with Angular.</p> -->
+                <h4>Tech stack</h4>
                 <p>The web application uses the MEAN stack to provide users with access to
                   information about different
                   movies, directors, and genres. Users are able to sign up, update their profile, and
                   create a list of their favorite movies.
-                </p>
-                <p>
-                  <strong>Technologies: </strong>Angular, Angular Material, Javascript
                 </p>
               </div>
               <div class="card-links">
@@ -178,6 +212,8 @@
               <img src="img/movie-api.jpg" alt="Watch-Til-Death API" class="lozad card__image">
               <div class="card-front-content">
                 <h3 class="card__title">Watch-Til-Death API</h3>
+                <p>
+                  REST API for the web application Watch-Til-Death with different endpoints for movie and user data.</p>
                 <div class="tech-tag-container">
                   <span class="tech-tag">NodeJS</span>
                   <span class="tech-tag">Express</span>
@@ -187,11 +223,15 @@
             </div>
             <div class="card-back" title="See overview">
               <div class="card-back-content">
+                <!-- <h4>Overview</h4>
                 <p>
-                  REST API for the web application Watch-Til-Death with different endpoints for movie and user data,
-                  built with NodeJS, Express, MongoDB and Mongoose. Implements JWT token-based user authentication.</p>
+                  REST API for the web application Watch-Til-Death with different endpoints for movie and user data.</p> -->
+                <h4>Tech stack</h4>
+                <p>Built with NodeJS, Express, MongoDB and Mongoose. Implements JWT token-based user authentication.</p>
+                <h4>Deployment</h4>
                 <p>
-                  <strong>Technologies: </strong>NodeJS, Express, MongoDB
+                  Deployed with Amazon Web Services. Three EC2 instances in an Auto Scaling group behind an Application
+                  Load Balancer and a separate database instance guarantee redundancy and scalability.
                 </p>
               </div>
               <div class="card-links">
@@ -200,7 +240,7 @@
                       src="img/github_icon.svg" class="footer__icon " alt="Icon: Github"></a>
                 </div>
                 <div class="card-icon-container">
-                  <a href="ttps://watch-til-death.cyclic.app/" target="_blank" title="Open website"><img
+                  <a href="https://api.watch-til-death.com" target="_blank" title="Open website"><img
                       src="img/link_icon.svg" class="footer__icon " alt="Icon: External Link"></a>
                 </div>
               </div>
@@ -214,6 +254,8 @@
               <img src="img/meetloaf.jpg" alt="Screenshot: Meetloaf app" class="lozad card__image">
               <div class="card-front-content">
                 <h3 class="card__title">Meetloaf</h3>
+                <p>Meetloaf is a serverless, progressive web application (PWA) that shows
+                  upcoming events in different cities.</p>
                 <div class="tech-tag-container">
                   <span class="tech-tag">React</span>
                   <span class="tech-tag">Javascript</span>
@@ -223,12 +265,13 @@
             </div>
             <div class="card-back" title="See overview">
               <div class="card-back-content">
+                <!-- <h4>Overview</h4>
                 <p>Meetloaf is a serverless, progressive web application (PWA) that shows
-                  upcoming events in different cities built with React using a test-driven development (TDD) approach.
-                  The application uses the Google Calendar API and Google authentication via AWS Lambda.</p>
-                <p>
-                  <strong>Technologies: </strong>React, Javascript, AWS&nbsp;Lambda
-                </p>
+                  upcoming events in different cities.</p> -->
+                <h4>Tech stack</h4>
+                <p>Built with React using a test-driven development (TDD) approach.
+                  The application is built with React, using the Google Calendar API and Google authentication via AWS
+                  Lambda (currently only possible for approved testers).</p>
               </div>
               <div class="card-links">
                 <div class="card-icon-container">
@@ -250,6 +293,10 @@
               <img src="img/meet.jpg" alt="Screenshot: Chat app" class="lozad card__image">
               <div class="card-front-content">
                 <h3 class="card__title">Chat App</h3>
+                <p>
+                  A chat app for mobile devices. The app provides users with a chat interface
+                  and options to share images and location.
+                </p>
                 <div class="tech-tag-container">
                   <span class="tech-tag">React Native</span>
                   <span class="tech-tag">Expo</span>
@@ -260,13 +307,13 @@
             <div class="card-back" title="See overview">
 
               <div class="card-back-content">
+                <!-- <h4>Overview</h4>
                 <p>
                   A chat app for mobile devices. The app provides users with a chat interface
-                  and options to share images and location. Built with React Native, Expo, and Google Firestore
-                  Database.
-                </p>
-                <p>
-                  <strong>Technologies: </strong>React Native, Expo, Firestore
+                  and options to share images and location.
+                </p> -->
+                <h4>Tech stack</h4>
+                <p>Built with React Native, Expo, and Google Firestore Database.
                 </p>
               </div>
               <div class="card-links">
@@ -284,7 +331,10 @@
             <div class="card-front" title="Learn more">
               <img src="img/pokedex-app.jpg" alt="Screenshot: Pokedex App" class="lozad card__image">
               <div class="card-front-content">
-                <h3 class="card__title">Chat App</h3>
+                <h3 class="card__title">Pokedex App</h3>
+                <p>
+                  A simple web app displaying Pokémon and their characteristics.
+                </p>
                 <div class="tech-tag-container">
                   <span class="tech-tag">Javascript</span>
                   <span class="tech-tag">HTML</span>
@@ -294,18 +344,23 @@
             </div>
             <div class="card-back" title="See overview">
               <div class="card-back-content">
+                <!-- <h4>Overview</h4>
                 <p>
-                  A simple web app displaying Pokémon and their characteristics, built in HTML and Javascript with
+                  A simple web app displaying Pokémon and their characteristics.
+                </p> -->
+                <h4>Tech stack</h4>
+                <p>Built with HTML, Javascript and
                   Bootstrap using the PokeAPI.
-                </p>
-                <p>
-                  <strong>Technologies: </strong>Javascript, HTML, CSS, Bootstrap
                 </p>
               </div>
               <div class="card-links">
                 <div class="card-icon-container">
                   <a href="https://github.com/lxnhard/pokedex-app" target="_blank" title="View code on GitHub"><img
                       src="img/github_icon.svg" class="footer__icon " alt="Icon: Github"></a>
+                </div>
+                <div class="card-icon-container">
+                  <a href="https://lxnhard.github.io/pokedex-app/" target="_blank" title="Open website"><img
+                      src="img/link_icon.svg" class="footer__icon " alt="Icon: External Link"></a>
                 </div>
               </div>
             </div>
@@ -327,15 +382,15 @@
         </p>
         <form class="contact-form">
           <div class="contact-form__element">
-            <label for="name" class="contact-form__label">Name:*</label>
+            <label for="name" class="contact-form__label">Name *</label>
             <input name="name" type="text" class="contact-form__input" required />
           </div>
           <div class="contact-form__element">
-            <label for="email" class="contact-form__label">Email:*</label>
+            <label for="email" class="contact-form__label">Email *</label>
             <input name="email" type="email" class="contact-form__input" required />
           </div>
           <div class="contact-form__element">
-            <label for="name" class="contact-form__label">Message:*</label>
+            <label for="name" class="contact-form__label">Message *</label>
             <textarea name="message" class="contact-form__text" required></textarea>
           </div>
 
@@ -347,16 +402,96 @@
       </div>
     </section>
 
+    <section class="section section-impressum section--hidden">
+      <h2 class="section__header">
+        <span class="text-wrapper">
+          <span class="letters">Legal Notice
+          </span>
+        </span>
+      </h2>
+      <div class="impressum">
+
+        <p>The following information is required by German law.</p>
+
+        <p>
+          Angaben gemäß § 5 TMG
+        </p>
+        <p>
+          Leonhard Link<br />
+          Rosenfelder Ring 28<br />
+          10315 Berlin<br />
+          <a href="mailto:leolink.dev@gmail.com">leolink.dev[at]gmail.com</a>
+        </p>
+        <h3>Haftung für Inhalte</h3>
+        <p>
+          Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und
+          Aktualität
+          der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für
+          eigene
+          Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als
+          Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen
+          oder
+          nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung
+          oder
+          Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine
+          diesbezügliche
+          Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei
+          Bekanntwerden
+          von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
+        </p>
+        <h3>Haftung für Links</h3>
+        <p>
+          Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben.
+          Deshalb
+          können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist
+          stets
+          der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt
+          der
+          Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung
+          nicht
+          erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte
+          einer
+          Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend
+          entfernen.
+        </p>
+        <h3>Urheberrecht</h3>
+        <p>
+          Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen
+          Urheberrecht.
+          Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des
+          Urheberrechtes
+          bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite
+          sind
+          nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom
+          Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als
+          solche
+          gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen
+          entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend
+          entfernen.
+        </p>
+
+        <p>
+          Website Impressum erstellt durch impressum-generator.de von der Kanzlei Hasselbach
+        </p>
+
+      </div>
+    </section>
+
+
   </main>
   <footer class="page-footer">
+    <p id="copyright">awdaw
+    </p>
     <div class="footer">
-
       <a href="https://github.com/lxnhard" target="_blank"><img src="img/github_icon.svg" class="footer__icon "
           alt="Icon: Github" title="My Github profile"></a>
 
       <a href="https://www.linkedin.com/in/leonhard-l" target="_blank"><img src="img/linkedin_icon.svg"
           class="footer__icon" alt="Icon: LinkedIn" title="My LinkedIn profile"></a>
     </div>
+    <p>
+      <a id="footer-link-impressum">Impressum</a>
+    </p>
   </footer>
 </body>
 

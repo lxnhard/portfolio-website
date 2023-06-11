@@ -34,9 +34,12 @@ const sectionWork = document.querySelector(".section-projects");
 const sectionWorkContent = document.querySelector(".project-list");
 const sectionContact = document.querySelector(".section-contact");
 const sectionContactContent = document.querySelector(".contact");
+const sectionImpressum = document.querySelector(".section-impressum");
+const sectionImpressumContent = document.querySelector(".impressum");
 const navigationLinkAbout = document.querySelector("#navigation-link-about");
 const navigationLinkWork = document.querySelector("#navigation-link-work");
-const navigationLinkContact = document.querySelector("#navigation-link-contact");
+const navigationLinkContact = document.querySelectorAll("#navigation-link-contact, #contact-button");
+const footerLinkImpressum = document.querySelector("#footer-link-impressum");
 
 const scrollElement = window.document.scrollingElement || window.document.body || window.document.documentElement;
 
@@ -70,6 +73,10 @@ function toggleSections(sectionActivate) {
       case (sectionContact):
         headerActivate = '.section-contact .section__header .letter';
         contentActivate = sectionContactContent;
+        break
+      case (sectionImpressum):
+        headerActivate = '.section-impressum .section__header .letter';
+        contentActivate = sectionImpressumContent;
     }
 
     switch (sectionDeactivate) {
@@ -84,6 +91,10 @@ function toggleSections(sectionActivate) {
       case (sectionContact):
         headerDeactivate = '.section-contact .section__header .letter'
         contentDeactivate = sectionContactContent;
+        break
+      case (sectionImpressum):
+        headerDeactivate = '.section-impressum .section__header .letter';
+        contentDeactivate = sectionImpressumContent;
     }
 
 
@@ -135,14 +146,12 @@ function toggleSections(sectionActivate) {
 
 navigationLinkAbout.addEventListener("click", () => { toggleSections(sectionProfile) });
 navigationLinkWork.addEventListener("click", () => { toggleSections(sectionWork) });
-navigationLinkContact.addEventListener("click", () => { toggleSections(sectionContact) });
-
+navigationLinkContact.forEach(element => element.addEventListener("click", () => { toggleSections(sectionContact) }));
+footerLinkImpressum.addEventListener("click", () => { toggleSections(sectionImpressum) });
 
 // H2 animation
 let textWrapper = document.querySelectorAll('.section__header .letters');
-textWrapper[0].innerHTML = textWrapper[0].textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-textWrapper[1].innerHTML = textWrapper[1].textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-textWrapper[2].innerHTML = textWrapper[2].textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+textWrapper.forEach(element => { element.innerHTML = element.textContent.replace(/\S/g, "<span class='letter'>$&</span>"); })
 
 anime.timeline({ loop: false })
   .add({
@@ -161,7 +170,7 @@ anime.timeline({ loop: false })
 
 
 
-let card = document.querySelectorAll(".card");
+const card = document.querySelectorAll(".card");
 
 card.forEach(item => {
   // click => turn card
@@ -181,6 +190,14 @@ card.forEach(item => {
       }
     });
   });
+
+
+  // Copyright
+  let copyright = document.querySelector("#copyright");
+  const date = new Date();
+  let year = date.getFullYear();
+
+  copyright.innerText = `© ${year}, Leonhard Link`
 
   // hover
   // item.addEventListener('mouseenter', function () {

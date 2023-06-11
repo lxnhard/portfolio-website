@@ -4,6 +4,7 @@
 :root {
   /* colors */
   --dark-accent: #2C74B3;
+  --light-accent: #80ACD1;
   --light-shades: #ffffff;
   --dark-shades: #06283D;
   --text-color: #06283D;
@@ -43,8 +44,15 @@ h2 * {
 
 h3 {
   color: var(--text-color);
-  font-size: 22px;
+  font-size: 16px;
   font-family: 'Montserrat', sans-serif;
+}
+
+h4 {
+  color: var(--text-color);
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
 }
 
 p {
@@ -64,6 +72,7 @@ a:visited {
 a:hover,
 a:focus {
   text-decoration: underline;
+  cursor: pointer;
 }
 
 a:active {
@@ -96,10 +105,17 @@ button,
   font-weight: var(--semibold);
   background-color: var(--dark-accent);
   color: var(--light-shades);
+  font-size: 20px;
   text-decoration: none;
   padding: 10px;
   border-radius: 5px;
   transition: opacity 0.9s;
+}
+
+.button-secondary {
+  background-color: #fff;
+  color: var(--dark-accent);
+  border: 1px solid var(--dark-accent);
 }
 
 button:hover,
@@ -133,12 +149,17 @@ button:focus,
   justify-content: space-between;
   padding: 20px 5px 20px 10px;
   height: 75px;
-  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  border-bottom: 2px solid rgba(0, 0, 0, .2);
 }
 
 .page-header__brand {
   display: inline-block;
   vertical-align: middle;
+}
+
+.page-header__brand__link:hover,
+.page-header__brand__link:active {
+  text-decoration: none;
 }
 
 .page-header__brand__title {
@@ -156,6 +177,7 @@ button:focus,
   font-weight: 300;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
+  color: var(--text-color);
 }
 
 @media all and (min-width: 500px) {
@@ -210,9 +232,9 @@ button:focus,
   display: inline-block;
   color: var(--dark-shades);
   text-transform: uppercase;
-  font-weight: 400;
   font-size: 18px;
   font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
   display: table-cell;
   vertical-align: middle;
   height: 35px;
@@ -222,7 +244,7 @@ button:focus,
 .navigation-list__item:hover,
 .navigation-list__item:focus {
   text-decoration: none;
-  color: #2C74B3;
+  color: var(--dark-accent);
   cursor: pointer;
 }
 
@@ -270,7 +292,7 @@ button:focus,
 /* Sections */
 
 .section {
-  margin: 130px auto 20px;
+  margin: 75px auto 20px;
   display: block;
 }
 
@@ -281,8 +303,9 @@ button:focus,
 .section__header {
   font-weight: 300;
   text-transform: uppercase;
-  /* line-height: 0; */
+  line-height: 0;
   margin: 0;
+  padding: 30px 0 30px 0;
 }
 
 .section__header .text-wrapper {
@@ -300,18 +323,24 @@ button:focus,
 
 /* Profile / Hero */
 
+
 .profile {
   max-width: 1440px;
   opacity: 0;
-  padding: 20px;
-  box-shadow: 5px 5px 15px 5px #dddddd;
 }
 
+.profile__content__container {
+  box-shadow: 5px 5px 15px 5px #dddddd;
+  padding: 20px;
+  margin-bottom: 40px;
+
+}
 
 @media all and (min-width: 500px) {
 
-  .profile {
+  .profile__content__container {
     padding: 40px;
+    margin-bottom: 60px;
   }
 }
 
@@ -320,9 +349,10 @@ button:focus,
 }
 
 .profile__content p:first-child {
-  font-size: 20px;
-  margin-top: 0;
+  font-size: 28px;
+  margin: 0;
 }
+
 
 .profile__image {
   height: 200px;
@@ -330,18 +360,49 @@ button:focus,
   float: left;
 }
 
-.profile__tech-tag-container {
-  margin-top: 40px;
-}
 
-.profile__tech-tag-container p {
-  margin-bottom: 6px;
-  font-size: 14px;
-  font-weight: 600;
+.profile__tech-tag-container h3 {
+  margin: 0 0 6px 0;
 }
 
 .profile__tech-tag {
   line-height: 3em;
+}
+
+
+.cta {
+  margin: 30px auto;
+  padding: 20px;
+  max-width: 1024px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+@media all and (min-width: 500px) {
+
+  .cta {
+    padding: 20px 40px;
+  }
+}
+
+
+
+.cta-title {
+  margin: 0;
+  font-size: 24px;
+}
+
+.cta-text {
+  margin: 0 20px 0 0;
+}
+
+.cta-button {
+  padding: 10px 20px;
 }
 
 /* Project grid list for project section */
@@ -357,16 +418,10 @@ button:focus,
 }
 
 
+
 @media all and (min-width: 768px) {
   .project-list {
     grid-template-columns: 1fr 1fr;
-  }
-}
-
-
-@media all and (min-width: 1024px) {
-  .project-list {
-    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
@@ -381,7 +436,12 @@ button:focus,
   width: 100%;
   transform-style: preserve-3d;
   border-radius: 4px;
-  box-shadow: 3px 3px 6px 3px #dddddd;
+}
+
+@media all and (min-width: 600px) {
+  .card {
+    min-height: 500px;
+  }
 }
 
 .card-front,
@@ -394,6 +454,8 @@ button:focus,
   /* align-items: center; */
   backface-visibility: hidden;
   cursor: pointer;
+  box-shadow: 3px 3px 6px 3px #dddddd;
+
 }
 
 /* card front */
@@ -412,13 +474,15 @@ button:focus,
 }
 
 .card__title {
-  margin: 10px 0 30px 0;
+  margin: 0;
+  padding: 0;
   width: 100%;
-  text-align: center;
+  font-size: 22px;
 }
 
 .card__title h3 {
   margin: 0;
+  font-size: 22px;
 }
 
 .tech-tag-container {
@@ -426,14 +490,15 @@ button:focus,
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .tech-tag {
-  border-radius: 50px;
+  /* border-radius: 50px; */
   padding: 4px 10px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
-  border: 1px solid rgba(0, 0, 0, .2);
+  border: 2px solid rgba(0, 0, 0, .2);
 }
 
 /* card back */
@@ -443,7 +508,7 @@ button:focus,
   top: 0;
   left: 0;
   transform: rotateY(180deg);
-  padding: 20px;
+  padding: 30px;
   justify-content: space-between;
   align-items: start;
 }
@@ -461,24 +526,24 @@ button:focus,
 
 .card-back-content p {
   margin-top: 0;
-  font-size: 14px;
+  /* font-size: 14px; */
 }
 
 @media all and (min-width: 500px) {
   .card-back-content p {
-    font-size: 16px;
+    /* font-size: 16px; */
   }
 }
 
 @media all and (min-width: 768px) {
   .card-back-content p {
-    font-size: 14px;
+    /* font-size: 14px; */
   }
 }
 
 @media all and (min-width: 1024px) {
   .card-back-content p {
-    font-size: 13px;
+    /* font-size: 13px; */
     margin-bottom: 8px;
   }
 }
@@ -505,14 +570,14 @@ button:focus,
 }
 
 .contact-form__label {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .contact-form__input,
 .contact-form__text {
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 2px;
-  padding: 4px 8px 4px 4px;
+  padding: 8px 8px 8px 8px;
 }
 
 .contact-form__input:focus,
@@ -526,20 +591,28 @@ button:focus,
 
 .contact-form__submit {
   width: 100%;
-  font-size: 20px;
 }
+
+.impressum {
+  opacity: 0;
+}
+
 
 /* Footer */
 .page-footer {
   clear: both;
   border-top: 1px solid rgba(0, 0, 0, .2);
   margin-top: 55px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .footer {
   display: flex;
   justify-content: center;
-  margin: 20px 0;
+  align-items: center;
+  margin: 0;
 }
 
 .footer__icon {

@@ -2,15 +2,12 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
-const ThreeMinifierPlugin = require("@yushijinhun/three-minifier-webpack");
-const threeMinifier = new ThreeMinifierPlugin();
 
 module.exports = {
   entry: {
     index: './src/index.js'
   },
   plugins: [
-    threeMinifier,
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       hash: true,
@@ -20,9 +17,6 @@ module.exports = {
       minify: true
     })],
   resolve: {
-    plugins: [
-      threeMinifier.resolver
-    ]
   },
   output: {
     filename: '[name].bundle.js',
